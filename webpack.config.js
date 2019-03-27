@@ -9,7 +9,7 @@ module.exports = {
         rules: [
             {
                 test: /\.twig$/,
-                loader: "twig-loader"
+                loader: 'twig-loader'
             },
             {
                 test: /\.css$/,
@@ -30,7 +30,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve('./src/views/index.twig'),
             filename: path.resolve('./dist/index.html'),
-            inject: true
+            inject: false
         }),
         new CopyWebpackPlugin([
             {
