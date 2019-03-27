@@ -1,0 +1,8 @@
+{
+  "name": "hawk.so",
+  "version": "1.0.0",
+  "description": "Hawk.so yard",
+  "main": "index.js",
+  "repository": "https://github.com/codex-team/hawk.so.git",
+  "license": "MIT"
+}
