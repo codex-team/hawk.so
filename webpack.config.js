@@ -12,7 +12,7 @@ module.exports = {
                 loader: 'twig-loader'
             },
             {
-                test: /\.css$/,
+                test: /\.pcss$/,
                 exclude: /node_modules/,
                 use: [
                     MiniCssExtractPlugin.loader,

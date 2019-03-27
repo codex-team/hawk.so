@@ -1,1 +1,1 @@
-require('./styles/index.css');
+require('./styles/index.pcss');
