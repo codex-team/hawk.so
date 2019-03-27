@@ -1,9 +1,9 @@
-/*@import "../../common/styles/base.css";*/
+@import "base.css";
 @import "variables.css";
 @import "home.css";
 
 body {
-  background: var(--color-yard-background);
+  background: var(--color-background);
 }
 
 .yard-page {

@@ -50,7 +50,7 @@
   }
 
   &__footer {
-    border-top: 1px solid color(var(--color-yard-background) lightness(+5%));
+    border-top: 1px solid color(var(--color-background) lightness(+5%));
     font-size: 15px;
     padding: 20px 0 0;
     letter-spacing: 0.18px;
