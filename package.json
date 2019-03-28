@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server"
   },
   "repository": "https://github.com/codex-team/hawk.so.git",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "dependencies": {
     "autoprefixer": "^9.4.4",
     "copy-webpack-plugin": "^5.0.2",
