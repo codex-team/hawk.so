@@ -29,12 +29,12 @@ module.exports = {
             extensions:['pcss']
         }),
         new MiniCssExtractPlugin({
-            filename: 'index.css'
+            filename: '[name].css?v=[hash]'
         }),
         new HtmlWebpackPlugin({
             template: path.resolve('./src/views/index.twig'),
             filename: path.resolve('./dist/index.html'),
-            inject: false
+            inject: true
         }),
         new CopyWebpackPlugin([
             {
