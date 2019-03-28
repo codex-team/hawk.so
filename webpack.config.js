@@ -9,7 +9,7 @@ module.exports = {
         rules: [
             {
                 test: /\.twig$/,
-                loader: "twig-loader"
+                loader: 'twig-loader'
             },
             {
                 test: /\.css$/,
