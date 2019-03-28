@@ -9,7 +9,7 @@
   },
   "repository": "https://github.com/codex-team/hawk.so.git",
   "license": "UNLICENSED",
-  "dependencies": {
+  "devDependencies": {
     "autoprefixer": "^9.4.4",
     "copy-webpack-plugin": "^5.0.2",
     "css-loader": "^2.1.1",
@@ -26,9 +26,7 @@
     "postcss-nested": "^4.1.1",
     "twig-loader": "^0.4.1",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
-  },
-  "devDependencies": {
+    "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1",
     "webpack-fix-style-only-entries": "^0.2.1"
   }
