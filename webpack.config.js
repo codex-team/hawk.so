@@ -2,9 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/styles/index.pcss',
     module: {
         rules: [
             {
@@ -24,6 +25,9 @@ module.exports = {
     },
 
     plugins: [
+        new FixStyleOnlyEntriesPlugin({
+            extensions:['pcss']
+        }),
         new MiniCssExtractPlugin({
             filename: 'index.css'
         }),
