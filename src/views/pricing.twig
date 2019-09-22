@@ -3,11 +3,49 @@
 
 {% block body %}
 
-  <div class="yard-page yard-pricing">
+  <div class="yard-pricing">
     <h2>Pricing</h2>
     <p>
       Hawk provides several plans with different volumes to cover most projects on all stages of growing.
     </p>
+    {% set plans = [
+      {
+        name: 'free',
+        eventsLimit: '10 000',
+        cost: 'FREE'
+      },
+      {
+        name: 'basic',
+        eventsLimit: '100 000',
+        cost: '20 $ / mo'
+      },
+      {
+        name: 'enterprise',
+        eventsLimit: '1 000 000',
+        cost: '200 $ / mo'
+      }
+    ] %}
+    <div class="yard-pricing__plans-wrapper">
+      {% for plan in plans %}
+        <div class="plan-item yard-pricing__plan-item">
+          <div
+              class="plan-item__header"
+              style="background-image: url('/assets/plan-{{ plan.name }}/3x.jpg')">
+          </div>
+          <div class="plan-item__content">
+            <div class="plan-item__name">
+              {{ plan.name | upper }}
+            </div>
+            <div class="plan-item__limit">
+              {{ plan.eventsLimit }} events / mo
+            </div>
+            <div class="plan-item__cost">
+              {{ plan.cost }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 
 {% endblock %}

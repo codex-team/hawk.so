@@ -1,6 +1,7 @@
 @import "base.pcss";
 @import "variables.pcss";
 @import "home.pcss";
+@import "pricing.pcss";
 
 body {
   background: var(--color-bg-main);
@@ -59,7 +60,14 @@ body {
 
 .main-content {
   margin: 0 auto 72px;
+  box-sizing: border-box;
   border-radius: 15px;
+  padding: 70px 122px;
+
+  @media (--media-mobile) {
+    padding: 15px;
+  }
+
   width: 90%;
   background-color: var(--color-bg-second);
 }
