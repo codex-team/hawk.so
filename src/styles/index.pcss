@@ -3,10 +3,46 @@
 @import "home.pcss";
 
 body {
-  background: var(--color-background);
+  background: var(--color-bg-main);
+  color: var(--color-text-main);
+  display: flex;
+  flex-direction: column;
 }
 
-.yard-page {
-  width: 100%;
-  color: var(--color-text-gray);
+
+.header {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 14px 0;
+
+  &__title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__nav {
+    display: flex;
+    margin-right: auto;
+
+    a {
+      display: inline-block;
+      margin-left: 20px;
+    }
+  }
+
+  &__login-button {
+    padding: 5px 14px;
+    border-radius: 9px;
+    border: solid 1px var(--color-text-main);
+  }
+}
+
+.main-content {
+  margin: 0 auto 72px;
+  border-radius: 15px;
+  width: 90%;
+  background-color: var(--color-bg-second);
 }
