@@ -1,10 +1,67 @@
 .yard-pricing {
+  p {
+    max-width: 445px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
   &__plans-wrapper {
     display: flex;
+    margin-top: 30px;
   }
 
   &__plan-item {
     margin-right: 20px;
+  }
+
+  &__description {
+    display: flex;
+    align-items: center;
+    margin: 30px 0 40px 0;
+
+    .tick-icon {
+      margin-right: 10px;
+    }
+  }
+}
+
+.features-table {
+  border-collapse: collapse;
+  text-align: center;
+
+  h3 {
+    opacity: 0.6;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  tbody tr {
+    font-size: 14px;
+    border-bottom: .5px solid rgba(219, 230, 255, 0.1);
+
+    td {
+      padding: 10px 0;
+    }
+
+    &:last-child {
+      border:none;
+    }
+  }
+
+  &__header {
+    min-width: 350px;
+    text-align: left;
+  }
+
+  &__plan-name {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  &__feature-name {
+    text-align: left;
   }
 }
 
@@ -29,12 +86,14 @@
     font-size: 12px;
     font-weight: bold;
   }
+
   &__limit {
     margin-top: 10px;
     opacity: 0.6;
     font-size: 14px;
     font-weight: bold;
   }
+
   &__cost {
     margin-top: 20px;
     font-size: 13px;

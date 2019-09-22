@@ -8,9 +8,10 @@
   <meta property="og:site_name" content="Hawk">
   <meta name="description" property="og:description"
         content="{{ meta.description|default('Fast and lightweight errors tracking service.') }}"/>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
+
 {% set pages = ['features', 'pricing', 'download', 'docs'] %}
 <header class="header">
   <h1 class="header__title">
@@ -24,7 +25,7 @@
           {% endif %}
           href="/{{ link }}"
       >
-        {{link | capitalize}}
+        {{ link | capitalize }}
       </a>
     {% endfor %}
   </nav>
@@ -35,8 +36,19 @@
     Login
   </a>
 </header>
+
 <main class="main-content">
   {% block body %}{% endblock %}
 </main>
+
+<div style="display: none;">
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <symbol id="tick" viewBox="0 0 15 10">
+      <path fill-rule="evenodd"
+            d="M6.44 7.01l7.07-7.07 1.415 1.414-7.071 7.07L6.439 9.84.782 4.182l1.415-1.414L6.439 7.01z"></path>
+    </symbol>
+  </svg>
+</div>
+
 </body>
 </html>
