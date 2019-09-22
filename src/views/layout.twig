@@ -8,25 +8,25 @@
   <meta property="og:site_name" content="Hawk">
   <meta name="description" property="og:description"
         content="{{ meta.description|default('Fast and lightweight errors tracking service.') }}"/>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,700&display=swap" rel="stylesheet"></head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,700&display=swap" rel="stylesheet">
+</head>
 <body>
+{% set pages = ['features', 'pricing', 'download', 'docs'] %}
 <header class="header">
   <h1 class="header__title">
-    Hawk
+    <a href="/">Hawk</a>
   </h1>
   <nav class="header__nav">
-    <a href="/features">
-      Features
-    </a>
-    <a href="/pricing">
-      Pricing
-    </a>
-    <a href="/download">
-      Download
-    </a>
-    <a href="/docs">
-      Docs
-    </a>
+    {% for link in pages %}
+      <a
+          {% if link == currentPage %}
+            class="header__nav--current"
+          {% endif %}
+          href="/{{ link }}"
+      >
+        {{link | capitalize}}
+      </a>
+    {% endfor %}
   </nav>
   <a
       class="header__login-button"

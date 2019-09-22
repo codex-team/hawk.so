@@ -21,11 +21,28 @@ body {
   &__title {
     font-size: 18px;
     font-weight: bold;
+    margin-right: 35px;
   }
 
   &__nav {
     display: flex;
     margin-right: auto;
+
+    &--current {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: -2px;
+        height: 3px;
+        right: -2px;
+        opacity: .2;
+        background: var(--color-text-main);
+        border-radius: 4px;
+      }
+    }
 
     a {
       display: inline-block;
