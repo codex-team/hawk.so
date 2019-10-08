@@ -20,17 +20,17 @@ blocks:
               echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}"
               ${REGISTRY_ADDRESS} --password-stdin
             - checkout
-            - 'docker build -t hawk.so:${SEMAPHORE_GIT_BRANCH} .'
+            - 'docker build -t hawk-yard:${SEMAPHORE_GIT_BRANCH} .'
             - docker images
             - >-
-              docker tag hawk.so:${SEMAPHORE_GIT_BRANCH}
-              ${REGISTRY_NAME}/hawk.so:${SEMAPHORE_GIT_BRANCH}
-            - 'docker push ${REGISTRY_NAME}/hawk.so'
+              docker tag hawk-yard:${SEMAPHORE_GIT_BRANCH}
+              ${REGISTRY_NAME}/hawk-yard:${SEMAPHORE_GIT_BRANCH}
+            - 'docker push ${REGISTRY_NAME}/hawk-yard'
       env_vars:
         - name: SEMAPHORE_GIT_BRANCH
           value: stage
         - name: SEMAPHORE_PROJECT_NAME
-          value: hawk.so
+          value: hawk-yard
   - name: Send notification
     skip:
       when: >-
