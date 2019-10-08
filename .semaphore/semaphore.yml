@@ -20,12 +20,12 @@ blocks:
               echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}"
               ${REGISTRY_ADDRESS} --password-stdin
             - checkout
-            - 'docker build -t hawk-collector:${SEMAPHORE_GIT_BRANCH} .'
+            - 'docker build -t hawk.so:${SEMAPHORE_GIT_BRANCH} .'
             - docker images
             - >-
-              docker tag hawk-collector:${SEMAPHORE_GIT_BRANCH}
-              ${REGISTRY_NAME}/hawk-collector:${SEMAPHORE_GIT_BRANCH}
-            - 'docker push ${REGISTRY_NAME}/hawk-collector'
+              docker tag hawk.so:${SEMAPHORE_GIT_BRANCH}
+              ${REGISTRY_NAME}/hawk.so:${SEMAPHORE_GIT_BRANCH}
+            - 'docker push ${REGISTRY_NAME}/hawk.so'
       env_vars:
         - name: SEMAPHORE_GIT_BRANCH
           value: stage
