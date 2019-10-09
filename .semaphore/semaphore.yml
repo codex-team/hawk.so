@@ -43,3 +43,14 @@ blocks:
         - name: Send notification
           commands:
             - "curl -X POST --data \"message=\U0001F4E6\U0001F991 *${SEMAPHORE_PROJECT_NAME}* deployed on \\`${SEMAPHORE_GIT_BRANCH}\\` branch&parse_mode=Markdown\" https://notify.bot.codex.so/u/${HAWK_TELEGRAM_CHAT}"
+  - name: Deploy
+    skip:
+      when: branch != 'stage'
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - >-
+              curl -X POST -H "Content-Type: application/json" --data
+              "{\"branch\":\"master\",\"secret_token\":\"${HAWK_STAGE_DEPLOY_TOKEN}\"}"
+              https://stage.hawk.so/deploy
