@@ -1,0 +1,56 @@
+version: v1.0
+name: Build and deploy
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Docker build
+    skip:
+      when: >-
+        branch != 'stage' AND branch != 'master' AND branch != 'semaphore-setup'
+        AND branch !~ '^release-/'
+    task:
+      secrets:
+        - name: docker-registry
+      jobs:
+        - name: Docker build
+          commands:
+            - >-
+              echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}"
+              ${REGISTRY_ADDRESS} --password-stdin
+            - checkout
+            - 'docker build -t hawk-yard:${SEMAPHORE_GIT_BRANCH} .'
+            - docker images
+            - >-
+              docker tag hawk-yard:${SEMAPHORE_GIT_BRANCH}
+              ${REGISTRY_NAME}/hawk-yard:${SEMAPHORE_GIT_BRANCH}
+            - 'docker push ${REGISTRY_NAME}/hawk-yard'
+      env_vars:
+        - name: SEMAPHORE_GIT_BRANCH
+          value: stage
+        - name: SEMAPHORE_PROJECT_NAME
+          value: hawk-yard
+  - name: Send notification
+    skip:
+      when: >-
+        branch != 'stage' AND branch != 'master' AND branch != 'semaphore-setup'
+        AND branch !~ '^release-/'
+    task:
+      secrets:
+        - name: codex-bot
+      jobs:
+        - name: Send notification
+          commands:
+            - "curl -X POST --data \"message=\U0001F4E6\U0001F991 *${SEMAPHORE_PROJECT_NAME}* deployed on \\`${SEMAPHORE_GIT_BRANCH}\\` branch&parse_mode=Markdown\" https://notify.bot.codex.so/u/${HAWK_TELEGRAM_CHAT}"
+  - name: Deploy
+    skip:
+      when: branch != 'stage'
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - >-
+              curl -X POST -H "Content-Type: application/json" --data
+              "{\"branch\":\"master\",\"secret_token\":\"${HAWK_STAGE_DEPLOY_TOKEN}\"}"
+              https://stage.hawk.so/deploy
