@@ -15,7 +15,6 @@ blocks:
             - >-
               echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}"
               ${REGISTRY_ADDRESS} --password-stdin
-            - checkout
             - 'docker build -t hawk-yard:${SEMAPHORE_GIT_BRANCH} .'
             - docker images
             - >-
