@@ -32,7 +32,7 @@ blocks:
       when: branch != 'stage'
     task:
       jobs:
-        - name: 'Job #1'
+        - name: Send deploy command
           commands:
             - >-
               curl -X POST -H "Content-Type: application/json" --data
