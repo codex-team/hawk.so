@@ -15,7 +15,7 @@ jobs:
       - name: Push to Docker hub if stage
         if: github.ref == 'refs/heads/stage'
         run: |
-          echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" ${REGISTRY_ADDRESS} --password-stdin
+          echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin ${REGISTRY_ADDRESS}
           docker tag hawk-yard ${REGISTRY_NAME}/hawk-yard:stage
           docker push ${REGISTRY_NAME}/hawk-yard:stage
       - name: Deploy stage
