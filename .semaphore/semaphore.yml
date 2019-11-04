@@ -1,0 +1,40 @@
+version: v1.0
+name: Build and deploy
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Docker build
+    task:
+      secrets:
+        - name: docker-registry
+      jobs:
+        - name: Docker build
+          commands:
+            - >-
+              echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}"
+              ${REGISTRY_ADDRESS} --password-stdin
+            - checkout --use-cache
+            - 'docker build -t hawk-yard:${SEMAPHORE_GIT_BRANCH} .'
+            - docker images
+            - >-
+              docker tag hawk-yard:${SEMAPHORE_GIT_BRANCH}
+              ${REGISTRY_NAME}/hawk-yard:${SEMAPHORE_GIT_BRANCH}
+            - 'docker push ${REGISTRY_NAME}/hawk-yard'
+      env_vars:
+        - name: SEMAPHORE_GIT_BRANCH
+          value: stage
+        - name: SEMAPHORE_PROJECT_NAME
+          value: hawk-yard
+  - name: Deploy
+    skip:
+      when: branch != 'stage'
+    task:
+      jobs:
+        - name: Send deploy command
+          commands:
+            - >-
+              curl -X POST -H "Content-Type: application/json" --data
+              "{\"branch\":\"master\",\"secret_token\":\"${HAWK_STAGE_DEPLOY_TOKEN}\"}"
+              https://stage.hawk.so/deploy
