@@ -15,15 +15,11 @@ jobs:
       - name: Push to Docker hub if stage
         if: github.ref == 'refs/heads/stage'
         run: |
-          echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}"
-              ${REGISTRY_ADDRESS} --password-stdin
-          docker tag hawk-yard
-              ${REGISTRY_NAME}/hawk-yard:stage
+          echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" ${REGISTRY_ADDRESS} --password-stdin
+          docker tag hawk-yard ${REGISTRY_NAME}/hawk-yard:stage
           docker push ${REGISTRY_NAME}/hawk-yard:stage
           docker logout
       - name: Deploy stage
         if: github.ref == 'refs/heads/stage'
         run: |
-          curl -X POST -H "Content-Type: application/json" --data
-              "{\"branch\":\"master\",\"secret_token\":\"${HAWK_STAGE_DEPLOY_TOKEN}\"}"
-              https://stage.hawk.so/deploy
+          curl -X POST -H "Content-Type: application/json" --data "{\"branch\":\"master\",\"secret_token\":\"${HAWK_STAGE_DEPLOY_TOKEN}\"}" https://stage.hawk.so/deploy
