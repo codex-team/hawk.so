@@ -1,0 +1,123 @@
+{% set currentPage = 'pricing' %}
+
+{% set plans = [
+  {
+    name: 'free',
+    eventsLimit: '10 000',
+    cost: 'FREE'
+  },
+  {
+    name: 'basic',
+    eventsLimit: '100 000',
+    cost: '20 $ / mo'
+  },
+  {
+    name: 'enterprise',
+    eventsLimit: '1 000 000',
+    cost: '200 $ / mo'
+  }
+] %}
+
+{% set featuresList = [
+  'Errors catchers for 12 languages',
+  'Notification to messengers and email',
+  'Unlimited projects',
+  'Unlimited team members',
+  'Workspace balance',
+  'Autopay, One-Click pay',
+  'Paying with invoice',
+  'Applications catalog'
+] %}
+
+{% extends './layout.twig' %}
+
+{% block body %}
+
+  <div class="yard-pricing">
+    <h2>Pricing</h2>
+    <p class="yard-pricing__caption">
+      Hawk provides several plans with different volumes to cover most projects on all stages of growing.
+    </p>
+
+    <div class="yard-pricing__plans-wrapper">
+      {% for plan in plans %}
+        <div class="plan-item yard-pricing__plan-item">
+          <div
+              class="plan-item__header"
+              style="background-image: url('/assets/plan-{{ plan.name }}/3x.jpg')">
+          </div>
+          <div class="plan-item__content">
+            <div class="plan-item__name">
+              {{ plan.name | upper }}
+            </div>
+            <div class="plan-item__limit">
+              {{ plan.eventsLimit }} events / mo
+            </div>
+            <div class="plan-item__cost">
+              {{ plan.cost }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="yard-pricing__description">
+      <div class="tick-icon tick-icon--big">
+        {% include '../components/icon.twig' with { symbol: 'tick' } %}
+      </div>
+      All plans includes all available features.
+    </div>
+
+    <table class="yard-pricing__features-table features-table">
+      <thead>
+      <tr>
+        <th class="features-table__header">
+          <h3>FEATURES</h3>
+        </th>
+        <th class="features-table__plan-name">
+          Free
+        </th>
+        <th class="features-table__plan-name">
+          Basic
+        </th>
+        <th class="features-table__plan-name">
+          Enterprise
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for feature in featuresList %}
+        <tr>
+          <td class="features-table__feature-name">{{ feature }}</td>
+          <td>
+            <div class="tick-icon tick-icon--small">
+              {% include '../components/icon.twig' with { symbol: 'tick' } %}
+            </div>
+          </td>
+          <td>
+            <div class="tick-icon tick-icon--small">
+              {% include '../components/icon.twig' with { symbol: 'tick' } %}
+            </div>
+          </td>
+          <td>
+            <div class="tick-icon tick-icon--small">
+              {% include '../components/icon.twig' with { symbol: 'tick' } %}
+            </div>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <button class="button button--submit">
+      Get started
+    </button>
+    <div class="yard-pricing__footer">
+      <h3>Free for non-profit products</h3>
+      <p>
+        Hawk is created by CodeX — team of passionate developers from different universities.
+        <br><br>
+        If you want a free unlimited access for non-profit product, contact us by <a href="mailto:team@hawk.so">team@hawk.so</a>.
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

@@ -2,31 +2,30 @@
 
 /**
 * Base site styles
-* =================================
 */
 html {
   height: 100%;
 }
 
 body {
-  font-family: "Lato", system-ui, sans-serif;
-  display: flex;
-  align-items: stretch;
+  font-family: Roboto, system-ui, sans-serif;
   min-height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 15px;
 }
 
-/**
-*
-* Base elements rules
-* ================================================
-*
-*/
 a {
   color: inherit;
   text-decoration: none;
+}
+
+
+h3 {
+  text-transform: uppercase;
+  opacity: 0.6;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 /**
@@ -51,4 +50,33 @@ li {
 
 .fl_r {
   float: right;
+}
+
+.button {
+  padding: 12px 35px;
+  line-height: 1em;
+  background-color: var(--color-indicator-medium);
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: var(--color-indicator-medium-dark);
+  }
+
+  &--submit {
+    min-width: 90px;
+    padding: 12px;
+    color: var(--color-text-main);
+    font-weight: 500;
+    font-size: 14.4px;
+    background-color: var(--color-indicator-medium);
+    border-radius: 4px;
+  }
+}
+
+
+svg {
+  fill: currentColor;
 }

@@ -1,0 +1,109 @@
+.yard-pricing {
+  &__plans-wrapper {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  &__plan-item {
+    margin-right: 20px;
+  }
+
+  &__description {
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    margin: 30px 0 40px 0;
+
+    .tick-icon {
+      margin-right: 10px;
+    }
+  }
+
+  &__caption {
+    max-width: 445px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .button--submit {
+    padding: 13px 22px;
+    margin: 25px 0 50px 0;
+  }
+
+  &__footer {
+    p {
+      font-size: 14px;
+      max-width: 325px;
+    }
+  }
+}
+
+.features-table {
+  border-collapse: collapse;
+  text-align: center;
+
+  tbody tr {
+    font-size: 14px;
+    border-bottom: .5px solid rgba(219, 230, 255, 0.1);
+
+    td {
+      width: 70px;
+      padding: 10px 0;
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &__header {
+    min-width: 350px;
+    text-align: left;
+  }
+
+  &__plan-name {
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  &__feature-name {
+    text-align: left;
+  }
+}
+
+.plan-item {
+  width: 220px;
+  border-radius: 7px;
+
+  &__header {
+    border-radius: 7px 7px 0 0;
+    height: 100px;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  &__content {
+    background-color: var(--color-bg-main);
+    padding: 20px 25px;
+    border-radius: 0 0 7px 7px;
+  }
+
+  &__name {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  &__limit {
+    margin-top: 10px;
+    opacity: 0.6;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__cost {
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
