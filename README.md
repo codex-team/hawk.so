@@ -1,23 +1,20 @@
-# hawk.so
+# hawk-yard
 
-## Development
-
-### Run dev server
+## Build Setup
 
 ```bash
-yarn start
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:3000
+$ yarn dev
+
+# build for production and launch server
+$ yarn build
+$ yarn start
+
+# generate static project
+$ yarn generate
 ```
 
-### Build sources
-
-For development you can use the following command with enabled **auto rebuild on changes** and **disabled compression** for bundles.  
-
-```bash
-yarn build:dev
-```
-
-Before commiting any changes you should build compressed production bundle.
-
-```bash
-yarn build
-```
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
