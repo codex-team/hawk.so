@@ -11,13 +11,14 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap' }
     ]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '~/assets/styles/variables.pcss',
+    '@/assets/styles/variables',
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -30,7 +31,8 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build'
+    '@nuxt/typescript-build',
+    '@nuxtjs/svg',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -64,7 +66,7 @@ export default {
         stage: 2,
         // Instruct all plugins to omit pre-polyfilled CSS
         // https://github.com/csstools/postcss-preset-env#preserve
-        preserve: false,
+        preserve: true,
         features: {
           // Modify colors using the color-mod() function in CSS
           // https://github.com/jonathantneal/postcss-color-mod-function
