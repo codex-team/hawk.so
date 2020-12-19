@@ -147,10 +147,6 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
-a {
-  text-decoration: none;
-  color: inherit;
-}
 
 .yard-footer {
   display: flex;

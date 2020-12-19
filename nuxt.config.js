@@ -14,7 +14,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: '',
+        content: 'Hawk.so - errors tracking system.',
       },
     ],
     link: [
@@ -34,6 +34,7 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     '@/assets/styles/variables',
+    '@/assets/styles/common',
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)

@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from 'vue'
+import Vue, { PropType } from 'vue';
 
 /**
  * Structure of a single feature
@@ -62,10 +62,10 @@ export default Vue.extend({
      */
     features: {
       type: Array as PropType<Feature[]>,
-      required: true
-    }
-  }
-})
+      required: true,
+    },
+  },
+});
 </script>
 
 <style lang="postcss" scoped>
