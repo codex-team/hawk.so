@@ -1,10 +1,10 @@
 # build node-gyp modules in different stage
-FROM node:10-alpine as build-stage
+FROM node:14.15.3-alpine3.10 as build-stage
 
 COPY . .
 
 RUN yarn
-RUN yarn build
+RUN yarn generate
 
 # production environment
 FROM nginx:1.17.3-alpine
