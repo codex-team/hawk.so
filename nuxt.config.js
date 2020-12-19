@@ -4,7 +4,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'hawk-yard',
+    title: 'Hawk. Errors catcher. Reimagined.',
     meta: [
       { charset: 'utf-8' },
       {
