@@ -1,6 +1,4 @@
 node_modules
 dist
-.*
-!.env
-!.postcssrc.yml
-README.md
+.nuxt
+.git

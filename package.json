@@ -1,30 +1,35 @@
 {
-  "name": "hawk.so",
+  "name": "hawk-yard",
   "version": "1.0.0",
-  "description": "Hawk.so yard",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "build": "webpack --mode production",
-    "build:dev": "webpack --mode development --watch",
-    "start": "webpack-dev-server"
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "yarn lint:js"
   },
-  "repository": "https://github.com/codex-team/hawk.so.git",
-  "license": "UNLICENSED",
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^2.0.0",
+    "core-js": "^3.6.5",
+    "nuxt": "^2.14.6"
+  },
   "devDependencies": {
-    "copy-webpack-plugin": "^5.0.2",
-    "css-loader": "^3.2.0",
-    "cssnano": "^4.1.8",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.8.0",
-    "normalize.css": "^8.0.1",
-    "postcss-import": "^12.0.1",
+    "@nuxt/types": "^2.14.6",
+    "@nuxt/typescript-build": "^2.0.3",
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-config-typescript": "^3.0.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/svg": "^0.1.12",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.10.0",
+    "eslint-config-codex": "^1.5.2",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "postcss": "^7.0.35",
+    "postcss-custom-media": "^7.0.8",
     "postcss-loader": "^3.0.0",
-    "postcss-nested": "^4.1.1",
-    "postcss-preset-env": "^6.6.0",
-    "twig-loader": "^0.5.1",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1",
-    "webpack-fix-style-only-entries": "^0.4.0"
+    "postcss-nested": "^4.2.3",
+    "postcss-nested-ancestors": "^2.0.0"
   }
 }

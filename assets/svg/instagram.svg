@@ -1,0 +1,27 @@
+<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient x1="50%" y1="99.709%" x2="50%" y2=".777%" id="a">
+      <stop stop-color="#E09B3D" offset="0%"/>
+      <stop stop-color="#C74C4D" offset="30%"/>
+      <stop stop-color="#C21975" offset="60%"/>
+      <stop stop-color="#7024C4" offset="100%"/>
+    </linearGradient>
+    <linearGradient x1="50%" y1="146.099%" x2="50%" y2="-45.16%" id="b">
+      <stop stop-color="#E09B3D" offset="0%"/>
+      <stop stop-color="#C74C4D" offset="30%"/>
+      <stop stop-color="#C21975" offset="60%"/>
+      <stop stop-color="#7024C4" offset="100%"/>
+    </linearGradient>
+    <linearGradient x1="50%" y1="658.141%" x2="50%" y2="-140.029%" id="c">
+      <stop stop-color="#E09B3D" offset="0%"/>
+      <stop stop-color="#C74C4D" offset="30%"/>
+      <stop stop-color="#C21975" offset="60%"/>
+      <stop stop-color="#7024C4" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <g fill-rule="nonzero" fill="none">
+    <path d="M11.234 0H4.766A4.772 4.772 0 000 4.766v6.468A4.772 4.772 0 004.766 16h6.468A4.772 4.772 0 0016 11.234V4.766A4.772 4.772 0 0011.234 0zm3.156 11.234a3.157 3.157 0 01-3.156 3.156H4.766a3.157 3.157 0 01-3.156-3.156V4.766A3.157 3.157 0 014.766 1.61h6.468a3.157 3.157 0 013.156 3.156v6.468z" fill="url(#a)"/>
+    <path d="M7.692 3.692c-2.205 0-4 1.795-4 4 0 2.206 1.795 4 4 4 2.206 0 4-1.794 4-4 0-2.205-1.794-4-4-4zm0 6.444a2.444 2.444 0 110-4.888 2.444 2.444 0 010 4.888z" fill="url(#b)"/>
+    <circle fill="url(#c)" cx="12" cy="4" r="1"/>
+  </g>
+</svg>

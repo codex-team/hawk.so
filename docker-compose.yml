@@ -1,0 +1,8 @@
+version: "3.2"
+services:
+  hawk-yard:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 3900:80
