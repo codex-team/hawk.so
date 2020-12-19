@@ -451,12 +451,17 @@ export default Vue.extend({
   }
 
   &__description {
+    display: inline-block;
     color: var(--color-text-main);
     font-size: 18px;
     line-height: 28px;
     margin: 0 auto;
     margin-bottom: 50px;
-    max-width: 370px;
+    max-width: 400px;
+    background-clip: text;
+    background-image: linear-gradient(270deg, #6781B4 1%, #BAD6FE 99%);
+    color: transparent;
+    font-weight: 500;
 
      @media (--screen-mobile) {
        font-size: 15px;

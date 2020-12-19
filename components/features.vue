@@ -103,12 +103,16 @@ export default Vue.extend({
     }
 
     &-title {
+      display: inline-block;
       font-size: 36px;
       font-weight: 800;
       color: var(--color-text-main);
       line-height: 45px;
       margin-bottom: 14px;
       padding-top: 24px;
+      background-clip: text;
+      background-image: linear-gradient(90deg,#98c9ff,#d7eaff);
+      color: transparent;
 
       @media (--screen-small) {
         font-size: 24px;
