@@ -24,7 +24,10 @@
                 <icon-download />
               </template>
             </ui-button>
-            <ui-button label="Open in browser">
+            <ui-button
+              label="Open in browser"
+              link="//beta.hawk.so"
+            >
               <template v-slot:icon>
                 <icon-sign-in />
               </template>
