@@ -14,15 +14,27 @@
         <div class="yard-footer__made-by">
           Made by <a href="https://codex.so">CodeX</a>
 
-          <a class="yard-footer__made-by-icon" href="https://github.com/codex-team">
+          <a
+            class="yard-footer__made-by-icon"
+            href="https://github.com/codex-team"
+            target="_target"
+          >
             <img src="~/assets/svg/github.svg" alt="CodeX GitHub">
           </a>
 
-          <a class="yard-footer__made-by-icon" href="https://twitter.com/codex_team">
+          <a
+            class="yard-footer__made-by-icon"
+            href="https://twitter.com/codex_team"
+            target="_target"
+          >
             <img src="~/assets/svg/twitter.svg" alt="CodeX Twitter">
           </a>
 
-          <a class="yard-footer__made-by-icon" href="https://instagram.com/codex_team">
+          <a
+            class="yard-footer__made-by-icon"
+            href="https://instagram.com/codex_team"
+            target="_target"
+          >
             <img src="~/assets/svg/instagram.svg" alt="CodeX Instagram">
           </a>
         </div>
@@ -158,7 +170,6 @@ export default Vue.extend({
   @media (--screen-medium){
     padding-bottom: 30px;
   }
-
 
   a:hover {
     color: var(--color-text-main)
