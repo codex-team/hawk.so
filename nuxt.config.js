@@ -21,7 +21,8 @@ export default {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/favicon.ico',
+        href: '/favicon-32.png',
+        sizes: '32x32',
       },
       {
         rel: 'stylesheet',
