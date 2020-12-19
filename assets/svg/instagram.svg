@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>instagram</title>
+    <defs>
+        <linearGradient x1="50%" y1="99.7089109%" x2="50%" y2="0.776721582%" id="linearGradient-1">
+            <stop stop-color="#E09B3D" offset="0%"></stop>
+            <stop stop-color="#C74C4D" offset="30%"></stop>
+            <stop stop-color="#C21975" offset="60%"></stop>
+            <stop stop-color="#7024C4" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="146.098873%" x2="50%" y2="-45.1596833%" id="linearGradient-2">
+            <stop stop-color="#E09B3D" offset="0%"></stop>
+            <stop stop-color="#C74C4D" offset="30%"></stop>
+            <stop stop-color="#C21975" offset="60%"></stop>
+            <stop stop-color="#7024C4" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="658.140556%" x2="50%" y2="-140.029283%" id="linearGradient-3">
+            <stop stop-color="#E09B3D" offset="0%"></stop>
+            <stop stop-color="#C74C4D" offset="30%"></stop>
+            <stop stop-color="#C21975" offset="60%"></stop>
+            <stop stop-color="#7024C4" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Garage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Yard-/-Pricing-Copy-2" transform="translate(-640.000000, -4091.000000)" fill-rule="nonzero">
+            <g id="Footer" transform="translate(149.000000, 3925.000000)">
+                <g id="Group-20" transform="translate(317.000000, 78.000000)">
+                    <g id="Group-22" transform="translate(0.000000, 88.000000)">
+                        <g id="instagram" transform="translate(174.000000, 0.000000)">
+                            <path d="M11.2335137,0 L4.76648628,0 C2.13823466,0 0,2.13823466 0,4.76648628 L0,11.2335137 C0,13.8617653 2.13823466,16 4.76648628,16 L11.2335137,16 C13.8617653,16 16,13.8617653 16,11.2335137 L16,4.76648628 C16,2.13823466 13.8617363,0 11.2335137,0 Z M14.3904006,11.2335137 C14.3904006,12.9769996 12.9769996,14.3904006 11.2335137,14.3904006 L4.76648628,14.3904006 C3.0230004,14.3904006 1.60959941,12.9769996 1.60959941,11.2335137 L1.60959941,4.76648628 C1.60959941,3.02297136 3.0230004,1.60959941 4.76648628,1.60959941 L11.2335137,1.60959941 C12.9769996,1.60959941 14.3904006,3.02297136 14.3904006,4.76648628 L14.3904006,11.2335137 L14.3904006,11.2335137 Z" id="Shape" fill="url(#linearGradient-1)"></path>
+                            <path d="M7.69230769,3.69230769 C5.48670415,3.69230769 3.69230769,5.48671045 3.69230769,7.69229366 C3.69230769,9.89787687 5.48670415,11.6923077 7.69230769,11.6923077 C9.89791123,11.6923077 11.6923077,9.89790494 11.6923077,7.69229366 C11.6923077,5.48668238 9.89791123,3.69230769 7.69230769,3.69230769 Z M7.69230769,10.1364738 C6.34243364,10.1364738 5.24816419,9.04220051 5.24816419,7.69232173 C5.24816419,6.34244294 6.34246171,5.24816965 7.69230769,5.24816965 C9.04218174,5.24816965 10.1364512,6.34244294 10.1364512,7.69232173 C10.1364512,9.04217244 9.04215368,10.1364738 7.69230769,10.1364738 Z" id="Shape" fill="url(#linearGradient-2)"></path>
+                            <circle id="Oval" fill="url(#linearGradient-3)" cx="12" cy="4" r="1"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

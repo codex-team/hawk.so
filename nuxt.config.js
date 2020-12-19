@@ -7,13 +7,28 @@ export default {
     title: 'hawk-yard',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: '',
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap' }
-    ]
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico',
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap',
+      },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -47,9 +62,12 @@ export default {
         // https://github.com/postcss/postcss-import
         'postcss-import': {},
 
-        // Convert modern CSS into something most browsers can understand
-        // https://github.com/csstools/postcss-preset-env
-        'postcss-preset-env': this.preset,
+        // /**
+        //  * PostCSS Nested ancestors introduces ^& selector
+        //  * which let you reference any parent ancestor selector
+        //  * with an easy and customizable interface.
+        //  */
+        'postcss-nested-ancestors': {},
 
         // Nested rules unwrapper
         // https://github.com/postcss/postcss-nested
@@ -60,19 +78,20 @@ export default {
 
         // Compression tool
         // https://github.com/cssnano/cssnano
-        cssnano: {}
+        cssnano: {},
+
       },
       preset: {
-        stage: 2,
+        stage: 1,
         // Instruct all plugins to omit pre-polyfilled CSS
         // https://github.com/csstools/postcss-preset-env#preserve
         preserve: true,
         features: {
           // Modify colors using the color-mod() function in CSS
           // https://github.com/jonathantneal/postcss-color-mod-function
-          'color-mod-function': {}
-        }
-      }
-    }
-  }
-}
+          'color-mod-function': {},
+        },
+      },
+    },
+  },
+};

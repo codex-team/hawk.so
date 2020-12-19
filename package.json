@@ -24,9 +24,12 @@
     "@nuxtjs/svg": "^0.1.12",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.10.0",
+    "eslint-config-codex": "^1.5.2",
     "eslint-plugin-nuxt": "^1.0.0",
     "postcss": "^7.0.35",
+    "postcss-custom-media": "^7.0.8",
     "postcss-loader": "^3.0.0",
-    "postcss-nested": "^4.2.3"
+    "postcss-nested": "^4.2.3",
+    "postcss-nested-ancestors": "^2.0.0"
   }
 }
