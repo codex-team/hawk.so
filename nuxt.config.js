@@ -16,6 +16,19 @@ export default {
         name: 'description',
         content: 'Hawk.so - errors tracking system.',
       },
+      {
+        name: 'msapplication-TileColor',
+        content: '#242732',
+      },
+      {
+        name: 'theme-color',
+        content: '#242732',
+      },
+      {
+        name: 'robots',
+        content: 'noindex,nofollow',
+      },
+
     ],
     link: [
       {
