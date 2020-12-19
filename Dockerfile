@@ -1,18 +1,23 @@
-# build node-gyp modules in different stage
-FROM node:14.15.3-alpine3.10 as build-stage
+FROM node:14.15.3 as build-stage
 
-COPY package.json yarn.lock ./
+WORKDIR /usr/src/app
+
+COPY package.json ./
 
 RUN yarn
 
 COPY . .
 
-RUN yarn generate
+RUN npm run generate
 
-# production environment
 FROM nginx:1.17.3-alpine
-COPY --from=build-stage /dist /usr/share/nginx/html
-RUN rm /etc/nginx/conf.d/default.conf
+
+WORKDIR /usr/src/app
+
+COPY --from=build-stage /usr/src/app/dist /usr/share/nginx/html
+
 COPY nginx.conf /etc/nginx/conf.d
+
 EXPOSE 80
+
 CMD ["nginx", "-g", "daemon off;"]
