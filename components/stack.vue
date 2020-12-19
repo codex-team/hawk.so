@@ -75,6 +75,7 @@ export default Vue.extend({
     will-change: transform;
     transition: transform 150ms ease-in;
     cursor: pointer;
+    align-items: center;
 
     &:hover {
       transform: scale(1.15) rotate(-7deg)
