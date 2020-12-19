@@ -6,6 +6,11 @@ const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 
 module.exports = {
     entry: './src/styles/index.pcss',
+    devServer: {
+        staticOptions: {
+            extensions: ['html']
+        }
+    },
     module: {
         rules: [
             {
@@ -35,13 +40,16 @@ module.exports = {
             template: path.resolve('./src/views/index.twig'),
             filename: path.resolve('./dist/index.html')
         }),
+        new HtmlWebpackPlugin({
+            template: path.resolve('./src/views/pricing.twig'),
+            filename: path.resolve('./dist/pricing/index.html')
+        }),
         new CopyWebpackPlugin([
             {
-                from: './src/assets/**/*',
-                to: './assets/[name].[ext]',
+                from: './src/assets/',
+                to: './assets/',
                 test: /\.(png|jpg|gif|svg|woff|woff2|ttf|eot)$/
             }
         ])
     ]
-}
-;
+};
