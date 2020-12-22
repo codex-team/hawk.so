@@ -4,7 +4,7 @@
       <page-header>
         Features
       </page-header>
-      We are preparing the description of Hawk features. There a so many.
+      We are preparing the description of Hawk features. There are so many.
     </page-container>
   </div>
 </template>

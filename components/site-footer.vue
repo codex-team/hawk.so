@@ -90,7 +90,7 @@ export default Vue.extend({
             },
             {
               label: 'Documentation',
-              url: '/docs',
+              url: 'https://hawk.so/docs',
             },
           ],
         },
@@ -103,11 +103,11 @@ export default Vue.extend({
             },
             {
               label: 'PC/Mac/Linux',
-              url: '//desktop.hawk.so',
+              url: '/download',
             },
             {
               label: 'Hawk Android',
-              url: '//android.hawk.so',
+              url: 'https://github.com/codex-team/hawk.android',
             },
           ],
         },

@@ -4,7 +4,7 @@
       <page-header>
         Pricing
       </page-header>
-      Pricing list will be displayed soon. There will be a Free plan and some advanced ones.
+      The pricing list will be displayed soon. There will be a Free plan and some advanced ones.
     </page-container>
   </div>
 </template>

@@ -16,20 +16,21 @@
           </div>
           <div class="landing__content-head-right">
             <ui-button
-              :label="downloadButtonLabel"
-              :link="downloadButtonHref"
+              label="Open in browser"
+              link="//beta.hawk.so"
               primary
             >
               <template v-slot:icon>
-                <icon-download />
+                <icon-sign-in />
               </template>
             </ui-button>
-            <ui-button
-              label="Open in browser"
-              link="//beta.hawk.so"
+             <ui-button
+              :label="downloadButtonLabel"
+              :link="downloadButtonHref"
+
             >
               <template v-slot:icon>
-                <icon-sign-in />
+                <icon-download />
               </template>
             </ui-button>
           </div>
