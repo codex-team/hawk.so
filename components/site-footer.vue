@@ -90,7 +90,7 @@ export default Vue.extend({
             },
             {
               label: 'Documentation',
-              url: 'https://hawk.so/docs',
+              url: 'https://docs.hawk.so/',
             },
           ],
         },
@@ -99,7 +99,7 @@ export default Vue.extend({
           items: [
             {
               label: 'Hawk web',
-              url: '//beta.hawk.so',
+              url: '//garage.hawk.so',
             },
             {
               label: 'PC/Mac/Linux',

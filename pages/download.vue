@@ -11,7 +11,7 @@
 
       <ui-button
         label="Open in browser"
-        link="//beta.hawk.so"
+        link="//garage.hawk.so"
         primary
       >
         <template v-slot:icon>

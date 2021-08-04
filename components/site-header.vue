@@ -24,10 +24,10 @@
         <a href="/features">Features</a>
         <a href="/pricing">Pricing</a>
         <a href="/download">Download</a>
-        <a href="https://hawk.so/docs">Docs</a>
+        <a href="https://docs.hawk.so/">Docs</a>
       </div>
 
-      <a class="site-header__signin" href="//beta.hawk.so">
+      <a class="site-header__signin" href="//garage.hawk.so">
         <icon-sign-in />
         To Garage
       </a>
