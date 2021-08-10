@@ -1,18 +1,20 @@
 @custom-media --screen-medium (max-width: 1279px);
 @custom-media --screen-small (max-width: 1024px);
-@custom-media --screen-mobile (max-width: 640px);
+@custom-media --screen-mobile (max-width: 850px);
 @custom-media --screen-mobile-extra-small (max-width: 320px);
 
 :root {
   --color-bg-main: #181B23;
   --color-bg-header: #242732;
   --color-text-main: #DBE6FF;
+  --color-bg-button-primary: #4979E4;
   --color-text-second: color-mod(var(--color-text-main) alpha(60%));
   --color-text-inversed: #242732;
   --color-border-light: color-mod(var(--color-text-main) alpha(10%));
 
   --layout-paddings-horisontal: 20px;
   --layout-main-col-width: 1024px;
+  --layout-page-content-max-width: 660px;
 }
 
 @media (--screen-small) {

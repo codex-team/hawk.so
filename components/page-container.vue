@@ -8,7 +8,11 @@
 .page-container {
   max-width: var(--layout-main-col-width);
   margin: 0 auto;
-  padding: 40px var(--layout-paddings-horisontal);
+  padding: 60px var(--layout-paddings-horisontal);
   color: var(--color-text-main);
+
+  @media (--screen-mobile){
+    padding-bottom: 30px;
+  }
 }
 </style>

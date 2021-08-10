@@ -171,6 +171,10 @@ export default Vue.extend({
     padding-bottom: 30px;
   }
 
+  @media (--screen-mobile){
+    padding-top: 60px;
+  }
+
   a:hover {
     color: var(--color-text-main)
   }
