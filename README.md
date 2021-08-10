@@ -2,7 +2,7 @@
 
 ## Build Setup
 
-! -----> Requires node.js 14+
+> ⚠️ Requires node.js 14+
 
 ```bash
 # install dependencies
