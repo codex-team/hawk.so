@@ -22,8 +22,8 @@ jobs:
           commit-message: Update prod
           committer: github-actions <action@github.com>
           author: github-actions <action@github.com>
-          branch: prod
-          base: ${{ steps.vars.outputs.base_branch }}
+          branch: ${{ steps.vars.outputs.base_branch }}
+          base: prod
           title: "Prod update suggestion"
           body: |
             Auto-generated prod update suggestion because of PR:
