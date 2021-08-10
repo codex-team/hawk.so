@@ -1,0 +1,30 @@
+name: PR with update prod from master/main branch
+
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+    types: [closed]
+
+jobs:
+  update-from-master:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout to target branch
+      - uses: actions/checkout@v2
+
+      # Create pull request with changes
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update prod
+          committer: github-actions <action@github.com>
+          author: github-actions <action@github.com>
+          branch: prod
+          base: ${{ steps.vars.outputs.base_branch }}
+          title: "Prod update suggestion"
+          body: |
+            Auto-generated prod update suggestion because of PR:
+            **${{ github.event.pull_request.title }}** #${{ github.event.pull_request.number }}
