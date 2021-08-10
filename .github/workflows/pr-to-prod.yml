@@ -12,19 +12,13 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      # Checkout to target branch
       - uses: actions/checkout@v2
 
-      # Create pull request with changes
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: repo-sync/pull-request@v2
         with:
-          commit-message: Update prod
-          committer: github-actions <action@github.com>
-          author: github-actions <action@github.com>
-          branch: ${{ steps.vars.outputs.base_branch }}
-          base: prod
-          title: "Prod update suggestion"
-          body: |
-            Auto-generated prod update suggestion because of PR:
-            **${{ github.event.pull_request.title }}** #${{ github.event.pull_request.number }}
+          destination_branch: "prod"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Update prod"
+          pr_body: |
+            Auto-generated prod update suggestion
