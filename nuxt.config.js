@@ -91,6 +91,12 @@ export default {
         // Report: https://github.com/jonathantneal/postcss-nesting/issues/41
         'postcss-nested': {},
 
+        /**
+         * PostCSS Custom Media lets you use Custom Media Queries in CSS, following the CSS Media Queries specification.
+         * https://github.com/postcss/postcss-custom-media
+         */
+        'postcss-custom-media': {},
+
         // Compression tool
         // https://github.com/cssnano/cssnano
         cssnano: {},
@@ -100,7 +106,7 @@ export default {
         stage: 1,
         // Instruct all plugins to omit pre-polyfilled CSS
         // https://github.com/csstools/postcss-preset-env#preserve
-        preserve: true,
+        preserve: false,
         features: {
           // Modify colors using the color-mod() function in CSS
           // https://github.com/jonathantneal/postcss-color-mod-function
