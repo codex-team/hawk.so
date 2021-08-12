@@ -55,7 +55,6 @@
         </tr>
       </table>
 
-
       <div class="text">
         <h2 class="small-heading">
           Open-source?
@@ -80,20 +79,27 @@
 
         <p>More information about payments can be found in the Hawk Docs under the <a href="https://docs.hawk.so/payments">Payments</a> section. For our contact — see the <a href="https://docs.hawk.so/contacts">Contacts</a> page.</p>
       </div>
-
     </page-container>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import Plan from "~/components/types/plan";
+import IPlan from '~/components/types/plan';
+import PageContainer from '~/components/page-container.vue';
+import PageHeader from '~/components/page-header.vue';
+import Plan from '~/components/plan.vue'
 
 export default Vue.extend({
+  components: {
+    PageContainer,
+    PageHeader,
+    Plan,
+  },
   data(): {
-    plans: Plan[],
+    plans: IPlan[],
     features: string[]
-  }{
+    } {
     return {
       plans: [
         {
@@ -123,7 +129,7 @@ export default Vue.extend({
           price: 'Personal',
           buttonText: 'Contact us',
           buttonHref: 'mailto:team@hawk.so?subject=Custom plan request',
-        }
+        },
       ],
       features: [
         'Error catchers for 10 languages',
@@ -136,10 +142,10 @@ export default Vue.extend({
         'Filtering and sorting',
         'Event marks',
         'Suspected Commits',
-        '30 days events storing'
-      ]
-    }
-  }
+        '30 days events storing',
+      ],
+    };
+  },
 });
 </script>
 
