@@ -2,13 +2,13 @@ FROM node:14.15.3 as build-stage
 
 WORKDIR /usr/src/app
 
-COPY package.json ./
+COPY package.json yarn.lock ./
 
 RUN yarn
 
 COPY . .
 
-RUN npm run generate
+RUN yarn generate
 
 FROM nginx:1.17.3-alpine
 
