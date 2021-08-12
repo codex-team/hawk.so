@@ -106,7 +106,7 @@ export default {
         stage: 1,
         // Instruct all plugins to omit pre-polyfilled CSS
         // https://github.com/csstools/postcss-preset-env#preserve
-        preserve: false,
+        preserve: true,
         features: {
           // Modify colors using the color-mod() function in CSS
           // https://github.com/jonathantneal/postcss-color-mod-function
