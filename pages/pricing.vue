@@ -88,7 +88,7 @@ import Vue from 'vue';
 import IPlan from '~/components/types/plan';
 import PageContainer from '~/components/page-container.vue';
 import PageHeader from '~/components/page-header.vue';
-import Plan from '~/components/plan.vue'
+import Plan from '~/components/plan.vue';
 
 export default Vue.extend({
   components: {
