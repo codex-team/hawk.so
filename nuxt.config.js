@@ -77,6 +77,10 @@ export default {
         // https://github.com/postcss/postcss-import
         'postcss-import': {},
 
+        'postcss-preset-env': {
+          importFrom: './assets/styles/variables.pcss',
+        },
+
         // /**
         //  * PostCSS Nested ancestors introduces ^& selector
         //  * which let you reference any parent ancestor selector
