@@ -104,14 +104,14 @@ export default Vue.extend({
       plans: [
         {
           name: 'Free',
-          description: 'up to 10K events / mo',
+          description: 'up to 100K events / mo',
           price: '0$ / mo',
           buttonText: 'Get Started',
           buttonHref: 'https://garage.hawk.so/?plan=free',
         },
         {
           name: 'Startup',
-          description: 'up to 100K events / mo',
+          description: 'up to 200K events / mo',
           price: '20$ / mo',
           buttonText: 'Get Started',
           buttonHref: 'https://garage.hawk.so/?plan=startup',
@@ -119,7 +119,7 @@ export default Vue.extend({
         {
           name: 'Pro',
           description: 'up to 1M events / mo',
-          price: '200$ / mo',
+          price: '100$ / mo',
           buttonText: 'Get Started',
           buttonHref: 'https://garage.hawk.so/?plan=pro',
         },
