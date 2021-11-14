@@ -37,19 +37,41 @@ export default Vue.extend({
   width: var(--layout-features-column-width);
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
+
+  --email-picture-width: 269px;
+  --layers-margins: 20px;
+  --channel-icon-size: 60px;
+
+  @media (--screen-small) {
+    width: 400px;
+  }
+
+  @media (--screen-mobile) {
+    width: 90%;
+    margin: 0 auto;
+
+    --email-picture-width: 200px;
+    --layers-margins: 10px;
+    --channel-icon-size: 40px;
+  }
 
   &__icons {
     position: absolute;
-    transform: translateX(160px);
+    transform: translateX(calc(  var(--email-picture-width) - calc(var(--email-picture-width) / 2) + calc(var(--layers-margins) * 2) - 10px  ));
     z-index: -1;
 
 
     &-slack,
     &-telegram,
     &-email {
-      width: 60px;
-      height: 60px;
+      width: var(--channel-icon-size);
+      height: var(--channel-icon-size);
       margin: 16px 0;
+
+      img {
+        width: 100%;
+      }
     }
   }
 
@@ -66,7 +88,7 @@ export default Vue.extend({
 
     &-layer-2,
     &-layer-3 {
-      margin: 20px 20px -20px -20px;
+      margin: var(--layers-margins) var(--layers-margins) calc(-1 * var(--layers-margins)) calc(-1 * var(--layers-margins));
     }
 
     &-layer-3 {
@@ -74,9 +96,8 @@ export default Vue.extend({
     }
 
     img {
-      margin: 20px 15px;
-      width: 269px;
-      height: 312px;
+      margin: var(--layers-margins) calc(var(--layers-margins) * 0.75);
+      width: var(--email-picture-width);
     }
   }
 }
