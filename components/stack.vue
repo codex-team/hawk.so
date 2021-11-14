@@ -67,6 +67,7 @@ export default Vue.extend({
   }
 
   &__item {
+    position: relative;
     background: #1D212A;
     border-radius: 14px;
     padding: 22px;
