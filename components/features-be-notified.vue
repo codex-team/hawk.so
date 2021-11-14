@@ -24,10 +24,10 @@
 </template>
 
 <script lang="ts">
-import Vue, {PropType} from "vue";
+import Vue from "vue";
 
 export default Vue.extend({
-  name: "features-be-notified",
+  name: 'features-be-notified',
 });
 </script>
 

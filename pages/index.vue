@@ -60,6 +60,11 @@
         <stack :items="stack" />
       </div>
     </div>
+
+    <div class="section">
+      <open-source />
+    </div>
+
   </div>
 </template>
 
@@ -70,6 +75,7 @@ import IconSignIn from '~/assets/svg/sign-in.svg?inline';
 import IconDownload from '~/assets/svg/download.svg?inline';
 import Features, { Feature } from '~/components/features.vue';
 import Stack, { StackItem } from '~/components/stack.vue';
+import OpenSource from '~/components/open-source.vue';
 import UiButton from '~/components/ui-button.vue';
 
 export default Vue.extend({
@@ -80,6 +86,7 @@ export default Vue.extend({
     Features,
     Stack,
     UiButton,
+    OpenSource
   },
   data(): {
     /**
@@ -471,7 +478,7 @@ export default Vue.extend({
 
      @media (--screen-mobile) {
        font-size: 15px;
-       line-height: 24px;
+       line-height: 1.5em;
        margin-bottom: 30px;
     }
   }
