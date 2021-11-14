@@ -32,6 +32,8 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
+@import url('@/assets/styles/variables.pcss');
+
 .composition {
   display: flex;
   width: var(--layout-features-column-width);

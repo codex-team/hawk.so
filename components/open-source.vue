@@ -52,6 +52,9 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
+
+@import url('@/assets/styles/variables.pcss');
+
 .os {
   background-image: linear-gradient(172deg, #14161E 0%, #202430 100%, #202430 100%);
 

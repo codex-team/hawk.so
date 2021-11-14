@@ -49,6 +49,19 @@
       </div>
     </div>
 
+    <div class="section">
+      <open-source />
+    </div>
+
+    <div class="section">
+      <div class="section__content">
+        <number
+          :value="'100 000 000'"
+          caption="events processed every day"
+        />
+      </div>
+    </div>
+
     <div class="section section--small">
       <div class="section__content">
         <h2 class="section__title">
@@ -59,10 +72,6 @@
         </div>
         <stack :items="stack" />
       </div>
-    </div>
-
-    <div class="section">
-      <open-source />
     </div>
 
   </div>
@@ -76,6 +85,7 @@ import IconDownload from '~/assets/svg/download.svg?inline';
 import Features, { Feature } from '~/components/features.vue';
 import Stack, { StackItem } from '~/components/stack.vue';
 import OpenSource from '~/components/open-source.vue';
+import Number from '~/components/number.vue';
 import UiButton from '~/components/ui-button.vue';
 
 export default Vue.extend({
@@ -86,7 +96,8 @@ export default Vue.extend({
     Features,
     Stack,
     UiButton,
-    OpenSource
+    OpenSource,
+    Number
   },
   data(): {
     /**
