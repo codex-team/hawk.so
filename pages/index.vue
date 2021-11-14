@@ -65,6 +65,20 @@
     <div class="section section--small">
       <div class="section__content">
         <h2 class="section__title">
+          Tested by products
+        </h2>
+        <div class="section__description">
+          Hawk is used by several big well-known products. And by some small and unkown ones.
+        </div>
+        <used-by-table
+          :items="usedBy"
+        />
+      </div>
+    </div>
+
+    <div class="section section--small">
+      <div class="section__content">
+        <h2 class="section__title">
           Supports your stack
         </h2>
         <div class="section__description">
@@ -86,6 +100,7 @@ import Features, { Feature } from '~/components/features.vue';
 import Stack, { StackItem } from '~/components/stack.vue';
 import OpenSource from '~/components/open-source.vue';
 import Number from '~/components/number.vue';
+import UsedByTable, {UsedByItem} from '~/components/used-by-table.vue';
 import UiButton from '~/components/ui-button.vue';
 
 export default Vue.extend({
@@ -97,7 +112,8 @@ export default Vue.extend({
     Stack,
     UiButton,
     OpenSource,
-    Number
+    Number,
+    UsedByTable,
   },
   data(): {
     /**
@@ -126,6 +142,11 @@ export default Vue.extend({
      * will be changed after page load to fit user platform
      */
     downloadButtonHref: string,
+
+    /**
+     * List of products to be displayed in 'Used by' section
+     */
+    usedBy: UsedByItem[];
     } {
     return {
       /**
@@ -224,6 +245,42 @@ export default Vue.extend({
        * will be changed after page load to fit user platform
        */
       downloadButtonHref: 'https://github.com/codex-team/hawk.desktop',
+
+      /**
+       * List of products to be displayed in 'Used by' section
+       */
+      usedBy: [
+        {
+          title: 'TJ',
+          logo: 'svg/used-by/tj.svg',
+          url: 'https://tjournal.ru',
+        },
+        {
+          title: 'Coub',
+          logo: 'svg/used-by/coub.png',
+          url: 'https://coub.com',
+        },
+        {
+          title: 'DTF',
+          logo: 'svg/used-by/dtf.svg',
+          url: 'https://dtf.ru',
+        },
+        {
+          title: 'Heyka',
+          logo: 'svg/used-by/heyka.svg',
+          url: 'https://heyka.app',
+        },
+        {
+          title: 'vc.ru',
+          logo: 'svg/used-by/vc.svg',
+          url: 'https://vc.ru',
+        },
+        {
+          title: 'Editor.js',
+          logo: 'svg/used-by/editorjs.svg',
+          url: 'https://editorjs.io',
+        },
+      ],
     };
   },
   mounted() {
@@ -438,6 +495,7 @@ export default Vue.extend({
 .section {
   position: relative;
   padding-top: 100px;
+  padding-bottom: 80px;
 
   &--with-gradient::before {
     content: '';

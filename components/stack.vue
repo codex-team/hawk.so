@@ -78,7 +78,7 @@ export default Vue.extend({
     align-items: center;
 
     &:hover {
-      transform: scale(1.15) rotate(-7deg)
+      transform: scale(1.15) rotate(-7deg);
     }
 
     &:nth-child(2n):hover {
