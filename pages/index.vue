@@ -471,6 +471,7 @@ export default Vue.extend({
       img {
         width: 100%;
         vertical-align: bottom;
+        background-image: linear-gradient(90deg, #1E202A 0%, #1E202A 4%, #242732 5%, #242732 24%, #2F3341 25%, #2F3341 100%);
       }
 
       @media (--screen-middle) {
