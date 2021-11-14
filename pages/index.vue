@@ -126,9 +126,14 @@ export default Vue.extend({
         },
         {
           title: 'Watch app health',
-          description: 'You can monitor and rate the quality of your product',
+          description: 'You can monitor and rate the quality of your product',
           picture: 'feature-graph',
           style: 'margin-bottom: -21px',
+        },
+        {
+          title: 'Be notified',
+          description: 'Do not miss important events staying alerted via Slack, Telegram or Email',
+          pictureComponent: 'features-be-notified',
         },
       ],
 

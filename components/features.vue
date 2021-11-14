@@ -16,12 +16,19 @@
         </div>
       </div>
       <div class="features__item-right">
-        <div class="features__item-image">
+        <div
+          v-if="feature.picture"
+          class="features__item-image"
+        >
           <img
             :src="require(`~/assets/images/${feature.picture}.png`)"
             :style="feature.style || ''"
           >
         </div>
+        <component
+          v-else-if="feature.pictureComponent"
+          :is="feature.pictureComponent"
+        />
       </div>
     </div>
   </div>
@@ -29,6 +36,7 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
+import FeaturesBeNotified from './features-be-notified.vue';
 
 /**
  * Structure of a single feature
@@ -47,7 +55,12 @@ export interface Feature {
   /**
    * Image path
    */
-  picture: string;
+  picture?: string;
+
+  /**
+   * Custom component name that should be used instead of picture
+   */
+  pictureComponent?: string;
 
   /**
    * Additional style overrides
@@ -56,6 +69,9 @@ export interface Feature {
 }
 
 export default Vue.extend({
+  components: {
+    FeaturesBeNotified,
+  },
   props: {
     /**
      * List of features
@@ -73,7 +89,7 @@ export default Vue.extend({
 .features {
   &__item {
     display: flex;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 
     @media (--screen-mobile) {
       flex-direction: column;
@@ -133,7 +149,7 @@ export default Vue.extend({
     }
 
     &-image {
-      width: 620px;
+      width: var(--layout-features-column-width);
       border-radius: 10px;
       box-shadow: 0 2px 44px 0 rgba(0,0,0,0.50);
 
