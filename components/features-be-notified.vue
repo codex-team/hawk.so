@@ -94,7 +94,12 @@ export default Vue.extend({
     }
 
     &-layer-3 {
-     display: flex;
+      display: flex;
+      /**
+       * Workaround for a bug with image stretching in flexbox for Safari 13
+       * (https://stackoverflow.com/questions/57516373/image-stretching-in-flexbox-in-safari)
+       */
+      align-items: flex-start;
     }
 
     img {
