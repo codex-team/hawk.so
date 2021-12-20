@@ -67,6 +67,7 @@ export default Vue.extend({
   }
 
   &__item {
+    position: relative;
     background: #1D212A;
     border-radius: 14px;
     padding: 22px;
@@ -77,8 +78,22 @@ export default Vue.extend({
     cursor: pointer;
     align-items: center;
 
+    div&{
+      &::before {
+        content: 'soon';
+        position: absolute;
+        color: var(--color-text-second);
+        background-color: var(--color-bg-main);
+        padding: 1px 5px;
+        border-radius: 5px;
+        font-size: 11px;
+        right: 7px;
+        bottom: 5px;
+      }
+    }
+
     &:hover {
-      transform: scale(1.15) rotate(-7deg)
+      transform: scale(1.15) rotate(-7deg);
     }
 
     &:nth-child(2n):hover {
