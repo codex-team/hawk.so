@@ -1,7 +1,6 @@
 <template>
   <div>
     <site-header />
-    <site-metrika />
     <Nuxt />
     <site-footer />
   </div>
