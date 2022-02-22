@@ -51,6 +51,13 @@ export default {
     '@/assets/styles/common',
   ],
 
+  yandexMetrika: {
+    id: '87601980',
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true,
+  },
+
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
   ],
@@ -67,6 +74,7 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    '@nuxtjs/yandex-metrika'
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
