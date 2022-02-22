@@ -5,6 +5,7 @@
     :class="{
       'button--primary': primary,
       'button--secondary': !primary,
+      'button--demo': demo,
     }"
     :href="link"
   >
@@ -29,6 +30,14 @@ export default Vue.extend({
      * Pass true to make button primary
      */
     primary: {
+      type: Boolean,
+      default: false,
+    },
+
+    /**
+     * Pass true to make button look for demo version
+     */
+    demo: {
       type: Boolean,
       default: false,
     },
@@ -83,6 +92,18 @@ export default Vue.extend({
       background-image: linear-gradient(180deg, #fff 0%, #FFFFFF 99%);
       box-shadow: 0 15px 29px -1px rgba(255,255,255,0.18);
       color: var(--color-text-inversed);
+    }
+  }
+
+  &--demo {
+    background-color: #fff;
+    background-image: linear-gradient(#3ca8ff, #0275ed 98.74%);
+    color: #fff;
+
+    &:hover {
+      background-color: #fff;
+      background-image: linear-gradient(#3ca8ff, #0275ed 99.74%);
+      color: #fff;
     }
   }
 
