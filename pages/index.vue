@@ -34,7 +34,7 @@
             </ui-button>
             <ui-button
               label="Join Demo Workspace"
-              link="http://localhost:8080/join/6e9fe41c8d6d59b272fda8c43c076ddcb571d3b5b09ad1e95e3a770b6358289c"
+              link="https://garage.hawk.so/join/6e9fe41c8d6d59b272fda8c43c076ddcb571d3b5b09ad1e95e3a770b6358289c"
               demo
             >
               <template v-slot:icon>
