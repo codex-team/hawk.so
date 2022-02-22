@@ -81,16 +81,12 @@ export default Vue.extend({
           section: 'About Hawk',
           items: [
             {
-              label: 'Features',
-              url: '/features',
+              label: 'Documentation',
+              url: 'https://docs.hawk.so/',
             },
             {
               label: 'Pricing',
               url: '/pricing',
-            },
-            {
-              label: 'Documentation',
-              url: 'https://docs.hawk.so/',
             },
           ],
         },
@@ -106,7 +102,7 @@ export default Vue.extend({
               url: '/download',
             },
             {
-              label: 'Hawk Android',
+              label: 'Hawk Android (WIP)',
               url: 'https://github.com/codex-team/hawk.android',
             },
           ],
@@ -135,20 +131,12 @@ export default Vue.extend({
               url: 'https://github.com/codex-team/hawk.go',
             },
             {
-              label: 'Ruby',
-              url: 'https://github.com/codex-team/hawk.ruby',
-            },
-            {
-              label: 'Java',
-              url: 'https://github.com/codex-team/hawk.java',
-            },
-            {
               label: 'Kotlin',
               url: 'https://github.com/codex-team/hawk.kotlin',
             },
             {
               label: 'View all »',
-              url: '',
+              url: 'https://docs.hawk.so/integrations',
             },
           ],
         },

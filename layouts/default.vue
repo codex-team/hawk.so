@@ -3,16 +3,19 @@
     <site-header />
     <Nuxt />
     <site-footer />
+    <site-metrika />
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
 import SiteFooter from '~/components/site-footer.vue';
+import SiteMetrika from '~/components/site-metrika.vue';
 
 export default Vue.extend({
   components: {
     SiteFooter,
+    SiteMetrika,
   },
 });
 </script>
