@@ -84,10 +84,10 @@ export default Vue.extend({
               label: 'Documentation',
               url: 'https://docs.hawk.so/',
             },
-            {
-              label: 'Pricing',
-              url: '/pricing',
-            },
+            // {
+            //   label: 'Pricing',
+            //   url: '/pricing',
+            // },
           ],
         },
         {

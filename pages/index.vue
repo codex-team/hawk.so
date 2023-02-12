@@ -12,6 +12,7 @@
 
             <div class="description">
               We'll help to improve your product's quality. You’ll see all the errors and problems in your code and we'll help to resolve them.
+              <br><span class="extra-indent_15px">Hawk is free and open-source.</span>
             </div>
           </div>
           <div class="landing__content-head-right">
@@ -96,9 +97,9 @@
       </div>
     </div>
 
-  <div class="section section--small">
-    <a href="https://www.producthunt.com/posts/hawk-2?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-hawk-2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=333015&theme=light" alt="Hawk - Open-source errors tracker | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-  </div>
+<!--  <div class="section section&#45;&#45;small">-->
+<!--    <a href="https://www.producthunt.com/posts/hawk-2?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-hawk-2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=333015&theme=light" alt="Hawk - Open-source errors tracker | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>-->
+<!--  </div>-->
   </div>
 </template>
 
@@ -353,6 +354,10 @@ export default Vue.extend({
 @custom-media --screen-tall (min-height: 1200px);
 @custom-media --screen-middle (max-width: 1170px);
 
+.extra-indent_15px {
+  margin-top: 15px;
+}
+
 .yard {
   display: flex;
   height: 100%;
@@ -419,6 +424,7 @@ export default Vue.extend({
         }
 
         .description {
+          display: grid;
           font-weight: 500;
           color: var(--color-text-main);
           letter-spacing: 0.33px;

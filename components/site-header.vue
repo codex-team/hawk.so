@@ -23,7 +23,7 @@
       <div class="site-header__menu">
         <a href="https://docs.hawk.so/">Docs</a>
         <a href="/download">Download</a>
-        <a href="/pricing">Pricing</a>
+<!--        <a href="/pricing">Pricing</a>-->
       </div>
 
       <a class="site-header__signin" href="//garage.hawk.so">
