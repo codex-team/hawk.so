@@ -21,8 +21,10 @@
         Hawk
       </a>
       <div class="site-header__menu">
-        <a href="https://docs.hawk.so/">Docs</a>
-        <a href="/download">Download</a>
+        <a href="https://docs.hawk.so/">Документация</a>
+        <button
+        class="download-button"
+        href="/download">Локализованная версия</button>
 <!--        <a href="/pricing">Pricing</a>-->
       </div>
 
@@ -111,6 +113,16 @@ export default Vue.extend({
         width: 24px;
         margin-right: 7px;
       }
+    }
+
+    &__download-button {
+      width: 227px;
+      height: 32px;
+      border-radius: 35px;
+      padding: 1px 13px;
+      gap: 10px;
+      background: linear-gradient(248.21deg, #0075FF 25.68%, #B56BFF 107.97%);
+
     }
 
     &__menu {
