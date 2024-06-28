@@ -19,9 +19,9 @@
         <div class="frame">
           <input class="input-style" type="text" placeholder="dev@yourproduct.ru" />
         </div>
-        <div class="div-wrapper">
+        <button class="div-wrapper">
           <div class="text-wrapper-3">Получить информацию</div>
-        </div>
+        </button>
       </div>
     </div>
   </div>
@@ -101,6 +101,7 @@
   gap: 10px;
   padding: 10px 12px;
   flex: 1; /* Растягивает элемент до максимальной ширины */
+  box-shadow: none;
 }
 
 .input-style {

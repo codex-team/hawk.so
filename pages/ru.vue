@@ -1,5 +1,4 @@
 <template>
-  <NuxtLayout name="default-ru">
     <div class="yard">
       <div class="landing">
         <illustration class="landing__illustration" />
@@ -83,7 +82,6 @@
   <!--    <a href="https://www.producthunt.com/posts/hawk-2?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-hawk-2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=333015&theme=light" alt="Hawk - Open-source errors tracker | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>-->
   <!--  </div>-->
     </div>
-  </NuxtLayout>
 </template>
 
 <script lang="ts">
