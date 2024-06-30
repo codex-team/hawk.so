@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div class="contact">
-      <div class="div">Свяжитесь с нами</div>
+      <div :class="[`div-${$props.titleSize}`, `div`]">{{ $props.title }}</div>
       <p class="team-hawk-so-t-me">
         <span class="text-wrapper">
           Чтобы начать сотрудничество или получить больше информации, напишите нам на
@@ -26,6 +26,25 @@
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  name: 'Contact',
+  props: {
+    title: {
+      type: String,
+    },
+    inputActive: {
+      type: Boolean,
+    },
+    titleSize: {
+      type: String,
+    }
+  },
+});
+</script>
 
 <style>
 .box {
@@ -70,10 +89,17 @@
 .div {
   color: #f2f6ff;
   font-family: "Roboto-Bold", Helvetica;
-  font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
   white-space: nowrap;
+
+  &-medium {
+    font-size: 36px;
+  }
+
+  &-small {
+    font-size: 26px;
+  }
 }
 
 .bottom-container {

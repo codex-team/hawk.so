@@ -1,0 +1,155 @@
+<template>
+  <div class="block">
+    <div class="grid">
+      <div class="block">
+        <div class="block-left">
+          <div class="title">Open Source</div>
+          <div class="text">Исходный код открыт для исследования и обслуживания</div>
+        </div>
+        <div class="block-left">
+          <div class="title">100 000 000</div>
+          <div class="text">Событий обрабатывается<br>каждый день</div>
+        </div>
+      </div>
+      <div class="block-bottom">
+        <div class="title">Проверено продуктами</div>
+        <div class="text">Hawk используется рядом хорошо известных продуктов.<br>И еще большим количеством менее известных.</div>
+        <div class="products">
+          <img src="~/assets/svg/used-by/vc.svg" class="svg"/>
+          <img src="~/assets/svg/used-by/dtf.svg" class="svg"/>
+          <img src="~/assets/svg/used-by/editorjs.svg" class="svg"/>
+          <img src="~/assets/svg/used-by/heyka.svg" class="svg"/>
+          <img src="~/assets/svg/used-by/tj.svg" class="svg"/>
+        </div>
+      </div>
+    </div>
+    <div class="block-bottom">
+      <div class="stack">
+        <div class="cell">
+          <img src='~/assets/svg/vue.svg' class="svg"/>
+        </div>
+        <div class="cell">
+          <img src='~/assets/svg/vite.svg' class="svg"/>
+        </div>
+        <div class="cell">
+          <img src='~/assets/svg/webpack.svg' class="svg"/>
+        </div>
+        <div class="cell">
+          <img src='~/assets/svg/javascript.svg' class="svg"/>
+        </div>
+        <div class="cell">
+          <img src='~/assets/svg/nodejs.svg' class="svg"/>
+        </div>
+        <div class="cell">
+          <img src='~/assets/svg/kotlin.svg' class="svg"/>
+        </div>
+        <div class="cell">
+          <img src='~/assets/svg/python.svg' class="svg"/>
+        </div>
+        <div class="cell">
+          <img src='~/assets/svg/go.svg' class="svg"/>
+        </div>
+        <div class="cell">
+          <img src='~/assets/svg/php.svg' class="svg"/>
+        </div>
+      </div>
+      <div class="title">Поддерживает<br/>ваши технологии</div>
+      <div class="text">Хоук имеет интеграции с популярными<br/>технологиями и фреймворками. </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+export default Vue.extend({
+  data() {
+    return {
+      svgUrls: [
+        // '~/assets/svg/vue.svg',
+        // '~/assets/svg/vite.svg',
+        // '~/assets/svg/webpack.svg',
+      ]
+    };
+  }
+});
+</script>
+
+<style>
+.grid {
+  display: grid;
+  gap: 16px;
+}
+.block {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.block-left {
+  background-color: #242936;
+  display: grid;
+  gap: 12px;
+  border-radius: 9px;
+  width: 278px;
+  height: auto;
+  padding: 40px 30px;
+}
+
+.block-bottom {
+  background-color: #242936;
+  display: grid;
+  gap: 12px;
+  height: auto;
+  border-radius: 9px;
+  width: auto;
+  padding: 40px 30px;
+}
+
+.title {
+  font-family: "Roboto";
+  font-size: 24px;
+  line-height: 28.13px;
+  color: #DBE6FF;
+  text-align: center;
+}
+
+.text {
+  font-family: "Roboto";
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(219, 230, 255, 0.6);
+  text-align: center;
+}
+
+.products {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+
+  .svg {
+    width: auto;
+    height: 32px;
+    filter: grayscale(1);
+  }
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stack {
+  justify-content: center;
+  display: inline-grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px; /* Зазор между элементами */
+  margin-bottom: 20px;
+
+  .svg {
+    width: auto;
+    height: 32px;
+  }
+}
+</style>

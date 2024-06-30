@@ -1,6 +1,6 @@
 <template>
   <div>
-    <site-header-ru />
+    <site-header />
     <Nuxt />
     <site-footer />
   </div>
@@ -8,10 +8,12 @@
 
 <script>
 import Vue from 'vue';
-import SiteFooter from '~/components/site-footer.vue';
+import SiteFooter from '~/components/site-footer-ru.vue';
+import SiteHeader from '~/components/site-header-ru.vue';
 
 export default Vue.extend({
   components: {
+    SiteHeader,
     SiteFooter,
   },
 });

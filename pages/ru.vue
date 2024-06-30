@@ -1,4 +1,5 @@
 <template>
+  <NuxtLayout name="ru">
     <div class="yard">
       <div class="landing">
         <illustration class="landing__illustration" />
@@ -28,7 +29,9 @@
           </div>
         </div>
         <br/>
-        <Contact/>
+        <Contact
+        title="Свяжитесь с нами"
+        titleSize="small"/>
       </div>
       <div class="section section--with-gradient">
         <div class="section__content">
@@ -38,50 +41,18 @@
           <features :features="features" />
         </div>
       </div>
-
-      <div class="section">
-        <open-source />
-      </div>
-
-      <div class="section">
-        <div class="section__content">
-          <number
-            :value="'100 000 000'"
-            caption="events processed every day"
-          />
-        </div>
-      </div>
-
-      <div class="section section--small">
-        <div class="section__content">
-          <h2 class="section__title">
-            Tested by products
-          </h2>
-          <div class="section__description">
-            Hawk is used by several big well-known products. And by some small and unkown ones.
-          </div>
-          <used-by-table
-            :items="usedBy"
-          />
-        </div>
-      </div>
-
-      <div class="section section--small">
-        <div class="section__content">
-          <h2 class="section__title">
-            Supports your stack
-          </h2>
-          <div class="section__description">
-            Hawk has integrations for most of languages. And their count continuously increases.
-          </div>
-          <stack :items="stack" />
-        </div>
-      </div>
-
   <!--  <div class="section section&#45;&#45;small">-->
   <!--    <a href="https://www.producthunt.com/posts/hawk-2?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-hawk-2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=333015&theme=light" alt="Hawk - Open-source errors tracker | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>-->
   <!--  </div>-->
+    <div class="content-blocks">
+      <gridInfo/>
+        <div class="contact-container">
+          <Contact title="Подключайтесь"
+          titleSize="medium"/>
+        </div>
+      </div>
     </div>
+  </NuxtLayout>
 </template>
 
 <script lang="ts">
@@ -96,6 +67,7 @@ import Number from '~/components/number.vue';
 import UsedByTable, {UsedByItem} from '~/components/used-by-table.vue';
 import UiButton from '~/components/ui-button.vue';
 import Contact from '~/components/contact.vue';
+import gridInfo from '~/components/grid-info.vue';
 
 export default Vue.extend({
   components: {
@@ -108,7 +80,9 @@ export default Vue.extend({
     OpenSource,
     Number,
     UsedByTable,
+    gridInfo,
   },
+  layout: 'ru',
   data(): {
     /**
      * Features list description
@@ -513,6 +487,20 @@ export default Vue.extend({
       }
     }
   }
+}
+
+.contact-container {
+  width: auto;
+  height: fit-content;
+  border-radius: 8px;
+  margin-top: 16px;
+  padding: 40px 30px;
+  background-color: #242936;
+}
+
+.content-blocks {
+  display: inline-grid;
+  justify-content: center;
 }
 
 .section {
