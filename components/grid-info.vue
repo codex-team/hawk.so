@@ -15,42 +15,42 @@
         <div class="title">Проверено продуктами</div>
         <div class="text">Hawk используется рядом хорошо известных продуктов.<br>И еще большим количеством менее известных.</div>
         <div class="products">
-          <img src="~/assets/svg/used-by/vc.svg" class="svg"/>
-          <img src="~/assets/svg/used-by/dtf.svg" class="svg"/>
-          <img src="~/assets/svg/used-by/editorjs.svg" class="svg"/>
-          <img src="~/assets/svg/used-by/heyka.svg" class="svg"/>
-          <img src="~/assets/svg/used-by/tj.svg" class="svg"/>
+          <VcIcon class="svg" style="fill: red;"/>
+          <DtfIcon class="svg"/>
+          <EditorIcon class="svg"/>
+          <HeykaIcon class="svg"/>
+          <TjIcon class="svg"/>
         </div>
       </div>
     </div>
     <div class="block-bottom">
       <div class="stack">
         <div class="cell">
-          <img src='~/assets/svg/vue.svg' class="svg"/>
+          <img src='~/assets/svg/ru/vue.svg' class="svg"/>
         </div>
         <div class="cell">
-          <img src='~/assets/svg/vite.svg' class="svg"/>
+          <img src='~/assets/svg/ru/vite.svg' class="svg"/>
         </div>
         <div class="cell">
-          <img src='~/assets/svg/webpack.svg' class="svg"/>
+          <img src='~/assets/svg/ru/webpack.svg' class="svg"/>
         </div>
         <div class="cell">
-          <img src='~/assets/svg/javascript.svg' class="svg"/>
+          <img src='~/assets/svg/ru/js.svg' class="svg"/>
         </div>
         <div class="cell">
-          <img src='~/assets/svg/nodejs.svg' class="svg"/>
+          <img src='~/assets/svg/ru/node.svg' class="svg"/>
         </div>
         <div class="cell">
-          <img src='~/assets/svg/kotlin.svg' class="svg"/>
+          <img src='~/assets/svg/ru/kotlin.svg' class="svg"/>
         </div>
         <div class="cell">
-          <img src='~/assets/svg/python.svg' class="svg"/>
+          <img src='~/assets/svg/ru/python.svg' class="svg"/>
         </div>
         <div class="cell">
-          <img src='~/assets/svg/go.svg' class="svg"/>
+          <img src='~/assets/svg/ru/go.svg' class="svg"/>
         </div>
         <div class="cell">
-          <img src='~/assets/svg/php.svg' class="svg"/>
+          <img src='~/assets/svg/ru/php.svg' class="svg"/>
         </div>
       </div>
       <div class="title">Поддерживает<br/>ваши технологии</div>
@@ -60,14 +60,25 @@
 </template>
 
 <script lang="ts">
+import VcIcon from '~/assets/svg/ru/vc.svg?inline';
+import DtfIcon from '~/assets/svg/ru/dtf.svg?inline';
+import EditorIcon from '~/assets/svg/ru/editorjs.svg?inline';
+import HeykaIcon from '~/assets/svg/ru/heyka.svg?inline';
+import TjIcon from '~/assets/svg/ru/notex.svg?inline';
+
+
 import Vue from 'vue';
 export default Vue.extend({
+  components: {
+    VcIcon,
+    DtfIcon,
+    EditorIcon,
+    HeykaIcon,
+    TjIcon,
+  },
   data() {
     return {
       svgUrls: [
-        // '~/assets/svg/vue.svg',
-        // '~/assets/svg/vite.svg',
-        // '~/assets/svg/webpack.svg',
       ]
     };
   }
@@ -128,8 +139,7 @@ export default Vue.extend({
 
   .svg {
     width: auto;
-    height: 32px;
-    filter: grayscale(1);
+    height: auto;
   }
 }
 
@@ -149,7 +159,7 @@ export default Vue.extend({
 
   .svg {
     width: auto;
-    height: 32px;
+    height: auto;
   }
 }
 </style>
