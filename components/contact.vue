@@ -120,7 +120,9 @@ export default Vue.extend({
 }
 
 .div-wrapper {
+  cursor: pointer;
   align-items: center;
+  border-width: 0px;
   background-color: #0d75d4; /* Цвет фона для div-wrapper */
   border-radius: 8px;
   display: inline-flex;
@@ -128,6 +130,10 @@ export default Vue.extend({
   padding: 10px 12px;
   flex: 1; /* Растягивает элемент до максимальной ширины */
   box-shadow: none;
+
+  &:hover {
+    background-color: #0b64b7;
+  }
 }
 
 .input-style {
@@ -141,6 +147,7 @@ export default Vue.extend({
 }
 
 .text-wrapper-3 {
+  cursor: pointer;
   color: #f2f6ff;
   font-family: "Roboto-Regular", Helvetica;
   font-size: 16px;

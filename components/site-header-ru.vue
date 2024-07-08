@@ -1,4 +1,4 @@
-  <template>
+<template>
   <div
     class="site-header"
     :class="{
@@ -12,7 +12,7 @@
 
       <a
         class="site-header__logo"
-        href="/"
+        href="/ru"
       >
         <img
           src="~/assets/images/hawk-logo.png"
@@ -22,15 +22,20 @@
       </a>
       <div class="site-header__menu">
         <a href="https://docs.hawk.so/">Документация</a>
-        <button
-        class="download-button"
-        href="/download">Локализованная версия</button>
-<!--        <a href="/pricing">Pricing</a>-->
+        <div
+          class="site-header__menu__local-version"
+          href="/download">
+            <img src="~/assets/svg/locale-version.svg" class="site-header__menu__local-version-svg"/>
+            <div class="text-container">Локализованная версия</div>
+        </div>
       </div>
-
-      <a class="site-header__signin" href="//garage.hawk.so">
-        <icon-sign-in />
-        To Garage
+      <a
+        href="https://github.com/codex-team/hawk.so"
+        class="site-header__menu-logo"
+      >
+        <img
+          src="~/assets/svg/github.svg"
+        />
       </a>
     </div>
   </div>
@@ -83,6 +88,7 @@ export default Vue.extend({
     &__inner {
       display: flex;
       align-items: center;
+      flex-shrink: 0;
       height: 100%;
       max-width: var(--layout-main-col-width);
       margin: 0 auto;
@@ -115,17 +121,12 @@ export default Vue.extend({
       }
     }
 
-    &__download-button {
-      width: 227px;
-      height: 32px;
-      border-radius: 35px;
-      padding: 1px 13px;
-      gap: 10px;
-      background: linear-gradient(248.21deg, #0075FF 25.68%, #B56BFF 107.97%);
-
-    }
-
     &__menu {
+      display: flex;
+      flex-direction: row;
+      flex-shrink: 0;
+      align-items: center;
+
       @media (--screen-mobile) {
         display: none;
       }
@@ -137,7 +138,7 @@ export default Vue.extend({
       }
 
       a {
-        display: inline-block;
+        display: flex;
         margin-right: 30px;
 
         @media (--screen-mobile) {
@@ -160,6 +161,29 @@ export default Vue.extend({
           display: flex;
         }
       }
+
+      &__local-version {
+        width: auto;
+        height: 32px;
+        display: flex;
+        place-items: center;
+        border-radius: 35px;
+        padding: 1px 13px;
+        gap: 10px;
+        background: linear-gradient(248.21deg, #0075FF 25.68%, #B56BFF 107.97%);
+
+        text-container {
+          font-family: 'Roboto';
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 30px;
+          color: white;
+        }
+      }
+    }
+
+    &__menu-logo {
+      margin-left: auto; /* This will push the element to the right */
     }
 
     &__signin {

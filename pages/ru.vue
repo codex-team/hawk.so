@@ -24,7 +24,7 @@
           </div>
           <div>
           </div>
-          <div class="landing__content-preview" :style="`transform: translateY(${Math.max(0, 150 - scroll * 0.35)}px)`">
+          <div class="landing__content-preview">
             <img src="~/assets/images/hawk-desktop.png" alt="Hawk desktop preview">
           </div>
         </div>
@@ -332,6 +332,7 @@ export default Vue.extend({
 
   &__content {
     position: relative;
+    flex-shrink: 0;
 
     &-head {
       width: 830px;
@@ -390,6 +391,7 @@ export default Vue.extend({
           width: 775px;
           line-height: 30px;
           font-size: 22px;
+          margin-top: 13px;
           &div {
             flex: 1 0 auto;
             font-family: "Roboto-Bold", Helvetica;
