@@ -47,7 +47,7 @@
     <div class="content-blocks">
       <gridInfo/>
         <div class="contact-container">
-          <Contact title="Подключайтесь"
+          <Contact inputActive title="Подключайтесь"
           titleSize="medium"/>
         </div>
       </div>
@@ -336,7 +336,7 @@ export default Vue.extend({
 
     &-head {
       width: 830px;
-      margin: 170px auto 50px;
+      margin: 120px auto 50px;
       padding: 0 var(--layout-paddings-horisontal);
       display: flex;
 

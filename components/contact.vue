@@ -17,7 +17,7 @@
       </p>
       <div class="bottom-container">
         <div class="frame">
-          <input class="input-style" type="text" placeholder="dev@yourproduct.ru" />
+          <input :class="['input-style', inputActive && 'input-style-active']" type="text" placeholder="dev@yourproduct.ru" />
         </div>
         <button class="div-wrapper">
           <div class="text-wrapper-3">Получить информацию</div>
@@ -116,19 +116,19 @@ export default Vue.extend({
   display: flex;
   margin-right: 10px;
   gap: 10px;
-  flex: 1; /* Растягивает элемент до максимальной ширины */
+  flex-grow: 1; /* Растягивает элемент до максимальной ширины */
 }
 
 .div-wrapper {
   cursor: pointer;
   align-items: center;
   border-width: 0px;
+  width: max-content;
   background-color: #0d75d4; /* Цвет фона для div-wrapper */
   border-radius: 8px;
   display: inline-flex;
   gap: 10px;
   padding: 10px 12px;
-  flex: 1; /* Растягивает элемент до максимальной ширины */
   box-shadow: none;
 
   &:hover {
@@ -138,12 +138,23 @@ export default Vue.extend({
 
 .input-style {
   background-color: #242832; /* Цвет фона для input */
-  color: #ffffff4c; /* Цвет текста для input */
+  color: #DBE6FF; /* Цвет текста для input */
+  font-weight: 400;
+  width: 100%;
   border: none;
   border-radius: 8px;
   padding: 10px 16px;
   font-size: 16px;
   flex: 1; /* Занимает все доступное пространство внутри frame */
+
+  &-active {
+    background-color: #323B4C;
+
+    &::placeholder {
+      color: #DBE6FF;
+      opacity: 1;
+    }
+  }
 }
 
 .text-wrapper-3 {
