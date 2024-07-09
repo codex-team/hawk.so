@@ -50,7 +50,6 @@ export default Vue.extend({
   },
   methods: {
     notify: function(message: string): void {
-      console.log('notified');
       fetch('https://notify.bot.codex.so/u/6PI3KB10U6ZV', {
         method: 'POST',
         headers: {
@@ -63,7 +62,6 @@ export default Vue.extend({
       .then(response => response.json())
       .then(data => console.log(data))
       .catch(error => console.error('Error:', error));
-      console.log('notified end');
     },
   }
 });
