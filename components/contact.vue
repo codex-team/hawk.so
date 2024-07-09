@@ -6,10 +6,7 @@
         <span class="text-wrapper">
           Чтобы начать сотрудничество или получить больше информации, напишите нам на
         </span>
-        <span class="span"> team@hawk.so</span>
-        <span class="text-wrapper"> или в телеграм </span>
-        <span class="span"> t.me/hawk-support</span>
-        <span class="text-wrapper">.</span>
+        <span class="span"> team@hawk.so</span><span class="text-wrapper"> или в телеграм </span><span class="span"> t.me/hawk-support</span><span class="text-wrapper">.</span>
         <br /> <!-- Переносим текст на новую строку -->
         <span class="text-wrapper">
           Либо оставьте почту:
@@ -17,10 +14,15 @@
       </p>
       <div class="bottom-container">
         <div class="frame">
-          <input :class="['input-style', inputActive && 'input-style-active']" type="text" placeholder="dev@yourproduct.ru" />
+          <input
+            :value="inputData"
+            :class="['input-style', inputActive && 'input-style-active']"
+            @input="inputData = $event.target.value"
+            type="text"
+            placeholder="dev@yourproduct.ru" />
         </div>
         <button class="div-wrapper">
-          <div class="text-wrapper-3">Получить информацию</div>
+          <div @click="notify($props.inputData)" class="text-wrapper-3">Получить информацию</div>
         </button>
       </div>
     </div>
@@ -41,8 +43,29 @@ export default Vue.extend({
     },
     titleSize: {
       type: String,
-    }
+    },
+    inputData: {
+      type: String,
+    },
   },
+  methods: {
+    notify: function(message: string): void {
+      console.log('notified');
+      fetch('https://notify.bot.codex.so/u/6PI3KB10U6ZV', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+          'message': message
+        })
+      })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error('Error:', error));
+      console.log('notified end');
+    },
+  }
 });
 </script>
 
