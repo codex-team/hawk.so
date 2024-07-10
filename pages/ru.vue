@@ -24,14 +24,15 @@
           </div>
           <div>
           </div>
-          <div class="landing__content-preview">
+          <div class="landing__content-preview" :style="`transform: translateY(${Math.max(0, 150 - scroll * 0.35)}px)`">
             <img src="~/assets/images/hawk-desktop.png" alt="Hawk desktop preview">
           </div>
         </div>
         <br/>
         <Contact
         title="Свяжитесь с нами"
-        titleSize="small"/>
+        titleSize="small"
+        style="margin-top: 115px;"/>
       </div>
       <div class="section section--with-gradient">
         <div class="section__content">

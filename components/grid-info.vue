@@ -119,6 +119,7 @@ export default Vue.extend({
   font-family: "Roboto";
   font-size: 24px;
   line-height: 28.13px;
+  font-weight: 700;
   color: #DBE6FF;
   text-align: center;
 }

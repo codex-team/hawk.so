@@ -78,25 +78,25 @@ export default Vue.extend({
 .contact {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Выравнивание по левому краю */
-  text-align: left; /* Выравнивание текста по левому краю */
-  width: 100%; /* Занимает всю ширину родительского блока */
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
 }
 
 .team-hawk-so-t-me {
-  display: inline; /* Обычное поведение текста */
+  display: inline;
   font-family: "Roboto-Regular", Helvetica;
   font-size: 16px;
   font-weight: 400;
   line-height: 23px;
   color: #f2f6ff;
-  margin-bottom: 20px;
-  word-break: break-word; /* Позволяет переносить длинные слова */
+  margin-bottom: 16px;
+  word-break: break-word;
 }
 
 .text-wrapper,
 .span {
-  display: inline; /* Устанавливаем inline, чтобы они вели себя как обычный текст */
+  display: inline;
 }
 
 .text-wrapper {
@@ -125,19 +125,18 @@ export default Vue.extend({
 
 .bottom-container {
   display: flex;
-  justify-content: space-between; /* Размещает элементы на одной строке */
+  justify-content: space-between;
   width: 100%;
-  margin-top: 10px; /* Небольшой отступ между frame и div-wrapper */
 }
 
 .frame {
   align-items: center;
-  background-color: #242832; /* Цвет фона для frame */
+  background-color: #242832;
   border-radius: 8px;
   display: flex;
   margin-right: 10px;
   gap: 10px;
-  flex-grow: 1; /* Растягивает элемент до максимальной ширины */
+  flex-grow: 1;
 }
 
 .div-wrapper {
@@ -145,7 +144,7 @@ export default Vue.extend({
   align-items: center;
   border-width: 0px;
   width: max-content;
-  background-color: #0d75d4; /* Цвет фона для div-wrapper */
+  background-color: #0d75d4;
   border-radius: 8px;
   display: inline-flex;
   gap: 10px;
@@ -158,15 +157,15 @@ export default Vue.extend({
 }
 
 .input-style {
-  background-color: #242832; /* Цвет фона для input */
-  color: #DBE6FF; /* Цвет текста для input */
+  background-color: #242832;
+  color: #DBE6FF;
   font-weight: 400;
   width: 100%;
   border: none;
   border-radius: 8px;
   padding: 10px 16px;
   font-size: 16px;
-  flex: 1; /* Занимает все доступное пространство внутри frame */
+  flex: 1;
 
   &-active {
     background-color: #323B4C;
