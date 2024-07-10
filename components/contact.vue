@@ -3,10 +3,10 @@
     <div class="contact">
       <div :class="[`div-${$props.titleSize}`, `div`]">{{ $props.title }}</div>
       <p class="team-hawk-so-t-me">
-        <span class="text-wrapper">
-          Чтобы начать сотрудничество или получить больше информации, напишите нам на
-        </span>
-        <span class="span"> team@hawk.so</span><span class="text-wrapper"> или в телеграм </span><span class="span"> t.me/hawk-support</span><span class="text-wrapper">.</span>
+        Чтобы начать сотрудничество или получить больше информации, напишите нам на
+        <a href="mailto:team@hawk.so"> team@hawk.so</a>
+        или в телеграм
+        <a href="https://t.me/+xWe73YEfIVRlNmYy">t.me/hawk-support</a>.
         <br /> <!-- Переносим текст на новую строку -->
         <span class="text-wrapper">
           Либо оставьте почту:
@@ -94,17 +94,9 @@ export default Vue.extend({
   word-break: break-word;
 }
 
-.text-wrapper,
-.span {
-  display: inline;
-}
-
-.text-wrapper {
-  color: #f2f6ff;
-}
-
-.span {
+a {
   color: #379fff;
+  display: inline;
 }
 
 .div {
@@ -131,7 +123,7 @@ export default Vue.extend({
 
 .frame {
   align-items: center;
-  background-color: #242832;
+  background-color: #252832;
   border-radius: 8px;
   display: flex;
   margin-right: 10px;
