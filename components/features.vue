@@ -91,9 +91,14 @@ export default Vue.extend({
     display: flex;
     margin-bottom: 100px;
 
+    @media (--screen-middle) {
+      margin-bottom: 70px;
+    }
+
     @media (--screen-mobile) {
       flex-direction: column;
       text-align: center;
+      margin-bottom: 40px;
     }
 
     &-left {
@@ -134,6 +139,10 @@ export default Vue.extend({
         font-size: 24px;
         margin-bottom: 0px;
         padding-top: 10px;
+      }
+
+      @media (--screen-middle) {
+        line-height: 30px;
       }
     }
 

@@ -68,8 +68,10 @@ export default Vue.extend({
 </script>
 
 <style>
+@import url('@/assets/styles/variables.pcss');
+
 .box {
-  width: 560px;
+  max-width: 560px;
   display: flex;
   justify-content: center;
   margin: 20px auto;
@@ -91,7 +93,11 @@ export default Vue.extend({
   line-height: 23px;
   color: #f2f6ff;
   margin-bottom: 16px;
-  word-break: break-word;
+  word-break: normal;
+
+  @media (--screen-mobile) {
+    font-size: 14px;
+  }
 }
 
 a {
@@ -108,26 +114,38 @@ a {
 
   &-medium {
     font-size: 36px;
+
+    @media (--screen-mobile) {
+      font-size: 26px;
+    }
   }
 
   &-small {
     font-size: 26px;
+
+    @media (--screen-mobile) {
+      font-size: 22px;
+    }
   }
 }
 
 .bottom-container {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   width: 100%;
+
+  @media (--screen-mobile) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+  }
 }
 
 .frame {
-  align-items: center;
   background-color: #252832;
   border-radius: 8px;
   display: flex;
-  margin-right: 10px;
-  gap: 10px;
   flex-grow: 1;
 }
 
@@ -135,13 +153,15 @@ a {
   cursor: pointer;
   align-items: center;
   border-width: 0px;
-  width: max-content;
   background-color: #0d75d4;
   border-radius: 8px;
-  display: inline-flex;
   gap: 10px;
   padding: 10px 12px;
   box-shadow: none;
+
+  @media (--screen-mobile) {
+    text-align: start;
+  }
 
   &:hover {
     background-color: #0b64b7;
@@ -152,7 +172,6 @@ a {
   background-color: #242832;
   color: #DBE6FF;
   font-weight: 400;
-  width: 100%;
   border: none;
   border-radius: 8px;
   padding: 10px 16px;

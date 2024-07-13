@@ -134,6 +134,7 @@ export default Vue.extend({
       ^&--menu-showed & {
         @media (--screen-mobile) {
           display: block;
+          padding-bottom: 24px;
         }
       }
 
@@ -183,7 +184,11 @@ export default Vue.extend({
     }
 
     &__menu-logo {
-      margin-left: auto; /* This will push the element to the right */
+      margin-left: auto;
+
+      @media (--screen-mobile) {
+        display: none;
+      }
     }
 
     &__signin {

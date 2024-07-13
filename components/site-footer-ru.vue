@@ -10,10 +10,10 @@
 </template>
 
 <script setup lang="ts">
-
 </script>
 
 <style lang="postcss">
+@import url('@/assets/styles/variables.pcss');
 .footer {
   display: flex;
   align-items: center;
@@ -33,6 +33,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: 22px;
+
+    @media (--screen-mobile) {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+    }
 
     &-text-1 {
       font-weight: 700;

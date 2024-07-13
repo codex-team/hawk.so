@@ -1,59 +1,55 @@
 <template>
-  <NuxtLayout name="ru">
-    <div class="yard">
-      <div class="landing">
-        <illustration class="landing__illustration" />
-        <div class="landing__content">
-          <div class="landing__content-head">
-            <div class="landing__content-head-left">
-              <h1>
-                Трекер ошибок
-              </h1>
+  <div class="yard">
+   <div class="landing">
+      <illustration class="landing__illustration" />
+      <div class="landing__content">
+        <div class="landing__content-head">
+          <div class="landing__content-head-left">
+            <h1>
+              Трекер ошибок
+            </h1>
 
-              <div class="description">
-                Хоук улучшает качество продукта.<br/>
-                Он отлавливает ошибки в ПО и помогает их устранить.<br/>
-                Локализованная версия позволяет не зависеть от зарубежных сервисов.<br/>
-              </div>
-              <span>
-                <div>Сервера в России</div>
-                <div>Оплата по счету юр. лица</div>
-                <div>Помощь с интеграцией</div>
-              </span>
+            <div class="description">
+              Хоук улучшает качество продукта.<br/>
+              Он отлавливает ошибки в ПО и помогает их устранить.<br/>
+              Локализованная версия позволяет не зависеть от зарубежных сервисов.<br/>
+            </div>
+            <div class="landing__content-head-left-advantages">
+              <div class="landing__content-head-left-advantages-text">Сервера в России</div>
+              <div class="landing__content-head-left-advantages-text">Оплата по счету юр. лица</div>
+              <div class="landing__content-head-left-advantages-text">Помощь с интеграцией</div>
             </div>
           </div>
-          <div>
-          </div>
-          <div class="landing__content-preview" :style="`transform: translateY(${Math.max(0, 150 - scroll * 0.35)}px)`">
-            <img src="~/assets/images/hawk-desktop.png" alt="Hawk desktop preview">
-          </div>
         </div>
-        <br/>
+        <div class="landing__content-preview" :style="`transform: translateY(${Math.max(0, 150 - scroll * 0.35)}px)`">
+          <img src="~/assets/images/hawk-desktop.png" alt="Hawk desktop preview">
+        </div>
+      </div>
+      <div class="content-blocks">
         <Contact
-        title="Свяжитесь с нами"
-        titleSize="small"
-        style="margin-top: 115px;"/>
+          title="Свяжитесь с нами"
+          titleSize="small"
+          style="margin-top: 115px;"/>
       </div>
-      <div class="section section--with-gradient">
-        <div class="section__content">
-          <h2 class="section__title">
-            Возможности
-          </h2>
-          <features :features="features" />
-        </div>
+    </div>
+    <div class="section section--with-gradient">
+      <div class="section__content">
+        <h2 class="section__title">
+          Возможности
+        </h2>
+        <features :features="features" />
       </div>
-  <!--  <div class="section section&#45;&#45;small">-->
-  <!--    <a href="https://www.producthunt.com/posts/hawk-2?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-hawk-2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=333015&theme=light" alt="Hawk - Open-source errors tracker | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>-->
-  <!--  </div>-->
+    </div>
     <div class="content-blocks">
       <gridInfo/>
-        <div class="contact-container">
-          <Contact inputActive title="Подключайтесь"
-          titleSize="medium"/>
+        <div class="contact-container, contact-container__backgrounded">
+          <Contact
+            inputActive
+            title="Подключайтесь"
+            titleSize="medium"/>
         </div>
       </div>
     </div>
-  </NuxtLayout>
 </template>
 
 <script lang="ts">
@@ -133,7 +129,7 @@ export default Vue.extend({
           picture: 'feature-event',
         },
         {
-          title: 'Следите за здоровьем ПО',
+          title: 'Следите за здоровьем ПО',
           description: 'Оценивайте и улучшайте качество вашего продукта',
           picture: 'feature-graph',
           style: 'margin-bottom: -21px',
@@ -323,8 +319,10 @@ export default Vue.extend({
 }
 
 .landing {
+  font-family: "Roboto-Regular", Helvetica;
   position: relative;
   background: #080E20;
+  align-items: center;
 
   &__illustration {
     width: 100%;
@@ -336,9 +334,9 @@ export default Vue.extend({
     flex-shrink: 0;
 
     &-head {
-      width: 830px;
       margin: 120px auto 50px;
       padding: 0 var(--layout-paddings-horisontal);
+      justify-content: center;
       display: flex;
 
       @media (--screen-tall) {
@@ -363,6 +361,7 @@ export default Vue.extend({
         gap: 18px;
         padding-bottom: 13px;
         position: relative;
+        align-items: center;
 
         @media (--screen-mobile) {
           padding-right: 0;
@@ -380,25 +379,31 @@ export default Vue.extend({
           }
 
           @media (--screen-mobile) {
-            font-size: 26px;
+            font-size: 30px;
           }
         }
 
-        span {
+        &-advantages {
           display: flex;
           justify-content: space-between;
           color: #F2F6FF;
           font-weight: 700;
-          width: 775px;
+          width: 100%;
           line-height: 30px;
           font-size: 22px;
           margin-top: 13px;
-          &div {
+
+          @media (--screen-mobile) {
+            display: grid;
+            font-weight: 600;
+            font-size: 16px;
+          }
+
+          &-text {
             flex: 1 0 auto;
             font-family: "Roboto-Bold", Helvetica;
             left: 0;
             letter-spacing: 0;
-            position: fixed;
             top: 0;
             white-space: nowrap;
           }
@@ -411,7 +416,8 @@ export default Vue.extend({
           letter-spacing: 0.33px;
           font-size: 20px;
           line-height: 30px;
-          width: 830px;
+          overflow-wrap: normal;
+          width: 100%;
           padding-bottom: 13px;
 
           @media (--screen-small) {
@@ -420,7 +426,7 @@ export default Vue.extend({
           }
 
           @media (--screen-mobile) {
-            font-size: 16px;
+            font-size: 14px;
             line-height: 22px;
           }
         }
@@ -485,6 +491,13 @@ export default Vue.extend({
         transform: none !important;
       }
 
+      @media (--screen-mobile) {
+        padding-top: 60px;
+        transform: none !important;
+        border-radius: 7px;
+        box-shadow: none;
+      }
+
       @media (--screen-small) {
         width: 90%;
       }
@@ -493,31 +506,40 @@ export default Vue.extend({
 }
 
 .contact-container {
-  width: auto;
+  width: 100%;
   height: fit-content;
-  border-radius: 8px;
-  margin-top: 16px;
-  padding: 40px 30px;
-  background-color: #242936;
+
+  &__backgrounded {
+    border-radius: 8px;
+    margin-top: 16px;
+    padding: 40px 30px;
+    background-color: #242936;
+  }
 }
 
 .content-blocks {
+  padding: 30px 40px;
   display: inline-grid;
   justify-content: center;
+
+  @media (--screen-mobile) {
+    padding: 20px 20px;
+  }
 }
 
 .section {
   position: relative;
   padding-top: 100px;
-  padding-bottom: 80px;
 
-  h2 {
-    font-family: Roboto;
-    font-size: 70px;
-    font-weight: 700;
-    line-height: 82.03px;
-    text-align: left;
+  @media (--screen-middle) {
+    padding-top: 70px;
   }
+
+  @media (--screen-mobile) {
+    padding-top: 40px;
+  }
+
+  padding-bottom: 80px;
 
   &--with-gradient::before {
     content: '';
@@ -545,32 +567,13 @@ export default Vue.extend({
     margin-bottom: 50px;
 
     @media (--screen-small) {
-      font-size: 40px;
+      font-size: 50px;
       margin-bottom: 30px;
     }
 
     @media (--screen-mobile) {
+      font-size: 30px;
       text-align: center;
-    }
-  }
-
-  &__description {
-    display: inline-block;
-    color: var(#DBE6FFCE);
-    width: 830px;
-    font-size: 18px;
-    line-height: 28px;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    background-clip: text;
-    background-image: linear-gradient(270deg, #6781B4 1%, #BAD6FE 99%);
-    color: transparent;
-    font-weight: 500;
-
-     @media (--screen-mobile) {
-       font-size: 15px;
-       line-height: 1.5em;
-       margin-bottom: 30px;
     }
   }
 
