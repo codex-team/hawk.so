@@ -15,7 +15,7 @@
       <form
         v-if="mail === '' || mail === undefined"
         class="bottom-container"
-        @submit="notify(inputData)"
+        @submit.prevent="notify(inputData)"
         >
         <div class="frame">
           <input
