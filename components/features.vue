@@ -128,7 +128,7 @@ export default Vue.extend({
       font-size: 36px;
       font-weight: 800;
       color: var(--color-text-main);
-      line-height: 45px;
+      line-height: 40px;
       margin-bottom: 14px;
       padding-top: 24px;
       background-clip: text;
@@ -149,7 +149,7 @@ export default Vue.extend({
 
     &-description {
       font-size: 17px;
-      line-height: 27px;
+      line-height: 24px;
       color: var(--color-text-second);
 
       @media (--screen-small) {
