@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="section section--with-gradient">
-      <div class="section__content">а
+      <div class="section__content">
         <h2 class="section__title">
           Возможности
         </h2>
