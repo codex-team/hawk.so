@@ -1,5 +1,72 @@
 <template>
-  <div class="yard">
+  <div class="yard"><!-- JSON-LD schema.org markup for WebPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Хоук — российский трекер ошибок",
+      "description": "Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом",
+      "image": "https://hawk.so/hawk-ru-og-image.png",
+      "url": "https://hawk.so/ru",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Хоук",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hawk.so/hawk-ru-og-image.png"
+        }
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "CodeX",
+        "description": "Команда open-source разработчиков",
+        "url": "https://codex.so",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://codex.so/public/app/img/codex-logo.svg"
+        },
+        "sameAs": [
+          "http://twitter.com/codex_team"
+        ]
+      }
+    }
+    </script>
+
+    <!-- JSON-LD schema.org markup for Product -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Хоук — российский трекер ошибок",
+      "description": "Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом",
+      "image": "https://hawk.so/hawk-ru-og-image.png",
+      "brand": {
+        "@type": "Brand",
+        "name": "Хоук"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://hawk.so/ru",
+        "priceCurrency": "RUB",
+        "price": "0",
+        "availability": "https://schema.org/InStock"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "CodeX",
+        "description": "Команда open-source разработчиков",
+        "url": "https://codex.so",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://codex.so/public/app/img/codex-logo.svg"
+        },
+        "sameAs": [
+          "http://twitter.com/codex_team"
+        ]
+      }
+    }
+    </script>
+
    <div class="landing">
       <illustration class="landing__illustration" />
       <div class="landing__content">
@@ -36,7 +103,7 @@
       </div>
     </div>
     <div class="section section--with-gradient">
-      <div class="section__content">а
+      <div class="section__content">
         <h2 class="section__title">
           Возможности
         </h2>
@@ -348,6 +415,31 @@ export default Vue.extend({
           hid: 'og:type',
           name: 'og:type',
           content: 'website'
+        },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'Хоук — российский трекер ошибок'
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: 'Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом'
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://hawk.so/hawk-ru-og-image.png'
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: 'https://hawk.so/ru'
         },
       ]
     }
