@@ -4,7 +4,7 @@
       <div class="block">
         <div class="grid__block">
           <div class="title">Open Source</div>
-          <div class="text">Исходный код открыт для исследования и обслуживания</div>
+          <div class="text">Исходный код открыт<br/>для исследования и обслуживания</div>
         </div>
         <div class="grid__block">
           <div class="title">100 000 000</div>
@@ -97,11 +97,13 @@ export default Vue.extend({
   &__block {
     background-color: #242936;
     display: grid;
+    align-items: center;
     gap: 12px;
     border-radius: 9px;
     width: auto;
     height: auto;
     padding: 40px 30px;
+
     @media(--screen-mobile) {
       padding: 20px 30px;
     }

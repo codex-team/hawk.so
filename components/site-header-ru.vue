@@ -134,7 +134,7 @@ export default Vue.extend({
       ^&--menu-showed & {
         @media (--screen-mobile) {
           display: block;
-          padding-bottom: 24px;
+          padding-bottom: 12px;
         }
       }
 
@@ -172,6 +172,10 @@ export default Vue.extend({
         padding: 1px 13px;
         gap: 10px;
         background: linear-gradient(248.21deg, #0075FF 25.68%, #B56BFF 107.97%);
+
+        @media (--screen-mobile) {
+          display: none;
+        }
 
         .text-container {
           font-weight: 500;

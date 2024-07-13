@@ -1,8 +1,8 @@
 <template>
   <div class="box">
     <div class="contact">
-      <div :class="[`div-${$props.titleSize}`, `div`]">{{ $props.title }}</div>
-      <p class="team-hawk-so-t-me">
+      <div :class="[`div-${$props.titleSize}`, `div`, inputActive && 'div__active']">{{ $props.title }}</div>
+      <p :class="['team-hawk-so-t-me', inputActive && 'team-hawk-so-t-me__active']">
         Чтобы начать сотрудничество или получить больше информации, напишите нам на
         <a href="mailto:team@hawk.so"> team@hawk.so</a>
         или в телеграм
@@ -118,6 +118,10 @@ export default Vue.extend({
   margin-bottom: 16px;
   word-break: normal;
 
+  &__active {
+    color: #DBE6FF;
+  }
+
   @media (--screen-mobile) {
     font-size: 14px;
   }
@@ -133,6 +137,10 @@ a {
   font-weight: 700;
   margin-bottom: 20px;
   white-space: nowrap;
+
+  &__active {
+    color: #DBE6FF;
+  }
 
   &-medium {
     font-size: 36px;
@@ -201,7 +209,7 @@ a {
 
 .input-style {
   background-color: #242832;
-  color: #DBE6FF;
+  color: #F2F6FF;
   font-weight: 400;
   border: none;
   border-radius: 8px;
@@ -213,6 +221,7 @@ a {
 
   &-active {
     background-color: #323B4C;
+    color: #DBE6FF;
 
     &::placeholder {
       color: #DBE6FF;
