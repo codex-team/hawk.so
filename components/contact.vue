@@ -80,8 +80,7 @@ export default Vue.extend({
           'message': message
         })
       })
-      .then(response => {
-        response.json();
+      .then(_ => {
         this.$emit('update:mail', this.inputData);
       })
       .catch(error => console.error('Error:', error));
