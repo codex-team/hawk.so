@@ -463,6 +463,8 @@ export default Vue.extend({
             flex: 1 0 auto;
             letter-spacing: 0;
             white-space: nowrap;
+            margin: 0;
+            font-size: inherit;
           }
         }
 

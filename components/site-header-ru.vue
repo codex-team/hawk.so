@@ -30,7 +30,7 @@
         </div>
       </div>
       <a
-        href="https://github.com/codex-team/hawk.so"
+        href="https://github.com/codex-team/hawk.mono"
         class="site-header__menu-logo"
       >
         <img
