@@ -85,7 +85,7 @@ export default Vue.extend({
 });
 </script>
 
-<style>
+<style scoped>
 @import url('@/assets/styles/variables.pcss');
 .grid {
   display: grid;

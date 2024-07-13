@@ -91,7 +91,7 @@ export default Vue.extend({
 });
 </script>
 
-<style>
+<style scoped>
 @import url('@/assets/styles/variables.pcss');
 
 .box {
@@ -111,7 +111,6 @@ export default Vue.extend({
 
 .team-hawk-so-t-me {
   display: inline;
-  font-family: "Roboto-Regular", Helvetica;
   font-size: 16px;
   font-weight: 400;
   line-height: 23px;
@@ -131,7 +130,6 @@ a {
 
 .div {
   color: #f2f6ff;
-  font-family: "Roboto-Bold", Helvetica;
   font-weight: 700;
   margin-bottom: 20px;
   white-space: nowrap;
@@ -226,7 +224,6 @@ a {
 .text-wrapper-3 {
   cursor: pointer;
   color: #f2f6ff;
-  font-family: "Roboto-Regular", Helvetica;
   font-size: 16px;
   font-weight: 400;
   white-space: nowrap;

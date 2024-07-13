@@ -173,8 +173,7 @@ export default Vue.extend({
         gap: 10px;
         background: linear-gradient(248.21deg, #0075FF 25.68%, #B56BFF 107.97%);
 
-        text-container {
-          font-family: 'Roboto';
+        .text-container {
           font-weight: 500;
           font-size: 15px;
           line-height: 30px;

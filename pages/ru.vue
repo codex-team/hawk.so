@@ -407,28 +407,30 @@ export default Vue.extend({
           font-weight: 700;
           width: 100%;
           line-height: 30px;
+          gap: 40px;
           font-size: 22px;
           margin-top: 13px;
+
+          @media (--screen-middle) {
+            gap: 20px;
+          }
 
           @media (--screen-mobile) {
             display: grid;
             font-weight: 600;
             font-size: 16px;
+            gap: 0px;
           }
 
           &-text {
             flex: 1 0 auto;
-            font-family: "Roboto-Bold", Helvetica;
-            left: 0;
             letter-spacing: 0;
-            top: 0;
             white-space: nowrap;
           }
         }
 
         .description {
           font-weight: 500;
-          font-family: "Roboto-Medium", "Helvetica";
           color: #dbe6ffce;
           letter-spacing: 0.33px;
           font-size: 20px;

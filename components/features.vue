@@ -135,14 +135,15 @@ export default Vue.extend({
       background-image: linear-gradient(90deg,#98c9ff,#d7eaff);
       color: transparent;
 
-      @media (--screen-small) {
-        font-size: 24px;
-        margin-bottom: 0px;
-        padding-top: 10px;
-      }
-
       @media (--screen-middle) {
         line-height: 30px;
+        margin: 8px 0 21px;
+      }
+
+      @media (--screen-small) {
+        font-size: 24px;
+        margin-bottom: 7px;
+        padding-top: 10px;
       }
     }
 
