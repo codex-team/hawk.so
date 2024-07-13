@@ -349,6 +349,31 @@ export default Vue.extend({
           name: 'og:type',
           content: 'website'
         },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'Хоук — российский трекер ошибок'
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: 'Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом'
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://hawk.so/hawk-ru-og-image.png'
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: 'https://hawk.so/ru'
+        },
       ]
     }
   }
