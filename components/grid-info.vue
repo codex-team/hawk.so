@@ -3,7 +3,7 @@
     <div class="grid">
       <div class="block">
         <div class="grid__block">
-          <div class="title">Open Source</div>
+          <h2 class="title">Open Source</h2>
           <div class="text">Исходный код открыт<br/>для исследования и обслуживания</div>
         </div>
         <div class="grid__block">
@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="grid__block">
-        <div class="title">Проверено продуктами</div>
+        <h2 class="title">Проверено продуктами</h2>
         <div class="text">Hawk используется рядом хорошо известных продуктов.<br>И еще большим количеством менее известных.</div>
         <div class="products">
           <VcIcon class="svg, products__box1"/>
@@ -53,7 +53,7 @@
           <img src='~/assets/svg/ru/php.svg' class="svg"/>
         </div>
       </div>
-      <div class="title">Поддерживает<br/>ваши технологии</div>
+      <h2 class="title">Поддерживает <br/>ваши технологии</h2>
       <div class="text">Хоук имеет интеграции с популярными<br/>технологиями и фреймворками. </div>
     </div>
   </div>

@@ -7,9 +7,9 @@
     >
       <div class="features__item-left">
         <div class="features__item-left-content">
-          <div class="features__item-title">
+          <h3 class="features__item-title">
             {{ feature.title }}
-          </div>
+          </h3>
           <div class="features__item-description">
             {{ feature.description }}
           </div>

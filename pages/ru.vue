@@ -15,14 +15,14 @@
               Локализованная версия позволяет не зависеть от зарубежных сервисов.<br/>
             </div>
             <div class="landing__content-head-left-advantages">
-              <div class="landing__content-head-left-advantages-text">Сервера в России</div>
-              <div class="landing__content-head-left-advantages-text">Оплата по счету юр. лица</div>
-              <div class="landing__content-head-left-advantages-text">Помощь с интеграцией</div>
+              <h2 class="landing__content-head-left-advantages-text">Сервера в России</h2>
+              <h2 class="landing__content-head-left-advantages-text">Оплата по счету юр. лица</h2>
+              <h2 class="landing__content-head-left-advantages-text">Помощь с интеграцией</h2>
             </div>
           </div>
         </div>
         <div class="landing__content-preview" :style="`transform: translateY(${Math.max(0, 150 - scroll * 0.35)}px)`">
-          <img src="~/assets/images/hawk-desktop.png" alt="Hawk desktop preview">
+          <img src="~/assets/images/hawk-desktop.png" title="Hawk — российский трекер ошибок" alt="Изображение супер-современного интерфейса Hawk'a">
         </div>
       </div>
       <div class="contact-container">
@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="section section--with-gradient">
-      <div class="section__content">
+      <div class="section__content">а
         <h2 class="section__title">
           Возможности
         </h2>
@@ -315,6 +315,43 @@ export default Vue.extend({
       }
     },
   },
+  head() {
+    return {
+      title: "Хоук — российский трекер ошибок",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: 'Хоук — российский трекер ошибок'
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: 'Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом'
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: 'https://hawk.so/hawk-ru-og-image.png'
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://hawk.so/ru'
+        },
+        {
+          hid: 'og:type',
+          name: 'og:type',
+          content: 'website'
+        },
+      ]
+    }
+  }
 });
 </script>
 
