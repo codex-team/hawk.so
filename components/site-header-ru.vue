@@ -34,7 +34,7 @@
         class="site-header__menu-logo"
       >
         <img
-          src="~/assets/svg/github.svg"
+          src="~/assets/svg/ru/github.svg"
         />
       </a>
     </div>

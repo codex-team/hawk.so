@@ -30,7 +30,6 @@
       </div>
       <div v-else
         class="bottom-container, bottom-container__text"
-
         >
         Спасибо, мы свяжемся с вами по почте <b>{{ mail }}</b>
       </div>
@@ -163,11 +162,10 @@ a {
   &__text {
     padding: 8px 0;
     color: #2FEF9F;
-    line-height: 23px;
+    line-height: 22px;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
   }
 
   @media (--screen-mobile) {
@@ -212,6 +210,8 @@ a {
   padding: 10px 16px;
   font-size: 16px;
   flex: 1;
+  border: none;
+  outline: none;
 
   &-active {
     background-color: #323B4C;
