@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div :class="['box', inputActive && 'box__active']">
     <div class="contact">
       <div :class="[`div-${$props.titleSize}`, `div`, inputActive && 'div__active']">{{ $props.title }}</div>
       <p :class="['team-hawk-so-t-me', inputActive && 'team-hawk-so-t-me__active']">
@@ -70,7 +70,7 @@ export default Vue.extend({
   methods: {
     notify: function(message: string): void {
       console.log('emit triggered')
-      fetch('https://notify.bot.codex.so/u/6PS73F8M91FC', {
+      fetch('https://notify.bot.codex.so/u/U8S04KRK5R51', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -99,6 +99,10 @@ export default Vue.extend({
   display: flex;
   justify-content: center;
   margin: 20px auto;
+
+  &__active {
+    max-width: 560px;
+  }
 }
 
 .contact {
