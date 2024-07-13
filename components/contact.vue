@@ -12,22 +12,24 @@
           Либо оставьте почту:
         </span>
       </p>
-      <div
+      <form
         v-if="mail === '' || mail === undefined"
         class="bottom-container"
+        @submit="notify(inputData)"
         >
         <div class="frame">
           <input
+            required
             :value="inputData"
             :class="['input-style', inputActive && 'input-style-active']"
             @input="inputData = $event.target.value"
-            type="text"
+            type="email"
             placeholder="dev@yourproduct.ru" />
         </div>
         <button class="div-wrapper">
-          <div @click="notify(inputData)" class="text-wrapper-3">Получить информацию</div>
+          <div class="text-wrapper-3">Получить информацию</div>
         </button>
-      </div>
+      </form>
       <div v-else
         class="bottom-container, bottom-container__text"
         >
@@ -69,7 +71,6 @@ export default Vue.extend({
   },
   methods: {
     notify: function(message: string): void {
-      console.log('emit triggered')
       fetch('https://notify.bot.codex.so/u/U8S04KRK5R51', {
         method: 'POST',
         headers: {
