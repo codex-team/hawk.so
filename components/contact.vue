@@ -229,7 +229,7 @@ a {
 
     &::placeholder {
       color: #DBE6FF;
-      opacity: 1;
+      opacity: 0.6;
     }
   }
 }
