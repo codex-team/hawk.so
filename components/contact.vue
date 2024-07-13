@@ -6,13 +6,16 @@
         Чтобы начать сотрудничество или получить больше информации, напишите нам на
         <a href="mailto:team@hawk.so"> team@hawk.so</a>
         или в телеграм
-        <a href="https://t.me/+xWe73YEfIVRlNmYy">t.me/hawk-support</a>.
-        <br /> <!-- Переносим текст на новую строку -->
+        <a href="https://t.me/+xWe73YEfIVRlNmYy">t.me/hawk⁠-⁠support</a>.
+        <br />
         <span class="text-wrapper">
           Либо оставьте почту:
         </span>
       </p>
-      <div class="bottom-container">
+      <div
+        v-if="mail === '' || mail === undefined"
+        class="bottom-container"
+        >
         <div class="frame">
           <input
             :value="inputData"
@@ -22,8 +25,14 @@
             placeholder="dev@yourproduct.ru" />
         </div>
         <button class="div-wrapper">
-          <div @click="notify($props.inputData)" class="text-wrapper-3">Получить информацию</div>
+          <div @click="notify(inputData)" class="text-wrapper-3">Получить информацию</div>
         </button>
+      </div>
+      <div v-else
+        class="bottom-container, bottom-container__text"
+
+        >
+        Спасибо, мы свяжемся с вами по почте <b>{{ mail }}</b>
       </div>
     </div>
   </div>
@@ -44,13 +53,25 @@ export default Vue.extend({
     titleSize: {
       type: String,
     },
-    inputData: {
+    mail: {
       type: String,
+      required: true
+    },
+  },
+  data() {
+    return {
+      inputData: this.mail,
+    }
+  },
+  watch: {
+    mail(newMail) {
+      this.inputData = newMail;
     },
   },
   methods: {
     notify: function(message: string): void {
-      fetch('https://notify.bot.codex.so/u/6PI3KB10U6ZV', {
+      console.log('emit triggered')
+      fetch('https://notify.bot.codex.so/u/6PS73F8M91FC', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -59,11 +80,15 @@ export default Vue.extend({
           'message': message
         })
       })
-      .then(response => response.json())
-      .then(data => console.log(data))
+      .then(response => {
+        response.json();
+        this.$emit('update:mail', this.inputData);
+      })
       .catch(error => console.error('Error:', error));
     },
-  }
+  },
+
+
 });
 </script>
 
@@ -71,7 +96,7 @@ export default Vue.extend({
 @import url('@/assets/styles/variables.pcss');
 
 .box {
-  max-width: 560px;
+  max-width: 620px;
   display: flex;
   justify-content: center;
   margin: 20px auto;
@@ -134,6 +159,16 @@ a {
   justify-content: space-between;
   gap: 10px;
   width: 100%;
+
+  &__text {
+    padding: 8px 0;
+    color: #2FEF9F;
+    line-height: 23px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 
   @media (--screen-mobile) {
     display: grid;

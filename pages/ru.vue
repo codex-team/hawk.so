@@ -27,6 +27,8 @@
       </div>
       <div class="contact-container">
         <Contact
+          :mail="mail"
+          @update:mail="updateMail"
           title="Свяжитесь с нами"
           titleSize="small"
           style="margin-top: 115px;
@@ -47,7 +49,9 @@
           <Contact
             inputActive
             title="Подключайтесь"
-            titleSize="medium"/>
+            titleSize="medium"
+            :mail="mail"
+            @update:mail="updateMail"/>
         </div>
       </div>
     </div>
@@ -78,6 +82,7 @@ export default Vue.extend({
     OpenSource,
     Number,
     UsedByTable,
+    Contact,
     gridInfo,
   },
   layout: 'ru',
@@ -113,6 +118,11 @@ export default Vue.extend({
      * List of products to be displayed in 'Used by' section
      */
     usedBy: UsedByItem[];
+
+    /**
+     * Mail that was left by user
+     */
+    mail: string;
     } {
     return {
       /**
@@ -247,6 +257,8 @@ export default Vue.extend({
           url: 'https://editorjs.io',
         },
       ],
+
+      mail: '',
     };
   },
   mounted() {
@@ -274,6 +286,10 @@ export default Vue.extend({
       }
 
       return 'Unknown';
+    },
+
+    updateMail(newMail: string) {
+      this.mail = newMail;
     },
 
     /**
