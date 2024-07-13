@@ -7,9 +7,9 @@
     >
       <div class="features__item-left">
         <div class="features__item-left-content">
-          <div class="features__item-title">
+          <h3 class="features__item-title">
             {{ feature.title }}
-          </div>
+          </h3>
           <div class="features__item-description">
             {{ feature.description }}
           </div>
@@ -91,9 +91,14 @@ export default Vue.extend({
     display: flex;
     margin-bottom: 100px;
 
+    @media (--screen-middle) {
+      margin-bottom: 70px;
+    }
+
     @media (--screen-mobile) {
       flex-direction: column;
       text-align: center;
+      margin-bottom: 40px;
     }
 
     &-left {
@@ -123,23 +128,28 @@ export default Vue.extend({
       font-size: 36px;
       font-weight: 800;
       color: var(--color-text-main);
-      line-height: 45px;
+      line-height: 40px;
       margin-bottom: 14px;
       padding-top: 24px;
       background-clip: text;
       background-image: linear-gradient(90deg,#98c9ff,#d7eaff);
       color: transparent;
 
+      @media (--screen-middle) {
+        line-height: 30px;
+        margin: 8px 0 21px;
+      }
+
       @media (--screen-small) {
         font-size: 24px;
-        margin-bottom: 0px;
+        margin-bottom: 7px;
         padding-top: 10px;
       }
     }
 
     &-description {
       font-size: 17px;
-      line-height: 27px;
+      line-height: 24px;
       color: var(--color-text-second);
 
       @media (--screen-small) {
