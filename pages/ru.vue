@@ -25,11 +25,12 @@
           <img src="~/assets/images/hawk-desktop.png" alt="Hawk desktop preview">
         </div>
       </div>
-      <div class="content-blocks">
+      <div class="contact-container">
         <Contact
           title="Свяжитесь с нами"
           titleSize="small"
-          style="margin-top: 115px;"/>
+          style="margin-top: 115px;
+                padding: 0 30px;"/>
       </div>
     </div>
     <div class="section section--with-gradient">

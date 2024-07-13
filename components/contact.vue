@@ -124,7 +124,7 @@ a {
     font-size: 26px;
 
     @media (--screen-mobile) {
-      font-size: 22px;
+      font-size: px;
     }
   }
 }
