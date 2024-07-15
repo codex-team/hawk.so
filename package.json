@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "core-js": "^3.16.1",
-    "nuxt": "^2.15.8"
+    "nuxt": "^2.15.8",
+    "nuxt-jsonld": "v1"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.8",
@@ -30,7 +31,6 @@
     "postcss-custom-media": "^7.0.8",
     "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.2.3",
-    "postcss-nested-ancestors": "^2.0.0",
-    "vue-meta": "^2.4.0"
+    "postcss-nested-ancestors": "^2.0.0"
   }
 }
