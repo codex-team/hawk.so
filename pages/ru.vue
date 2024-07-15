@@ -408,7 +408,7 @@ export default Vue.extend({
                 "http://twitter.com/codex_team"
               ]
             }
-          },
+          }
         },
         {
           // JSON-LD schema.org markup for Product
@@ -445,7 +445,8 @@ export default Vue.extend({
             }
           }
         }
-      ]
+      ],
+      __dangerouslyDisableSanitizers: ['script'],
     }
   }
 });
