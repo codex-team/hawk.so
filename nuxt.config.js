@@ -1,4 +1,16 @@
 export default {
+  router: {
+    /**
+     * This will not allow to visit route with trailing slash
+     * (else redirect will be treated as navigation to the current page and error will be raised)
+     */
+    trailingSlash: false,
+
+    /**
+     * This middleware will redirect user if he tries to visit route with trailing slash
+     */
+    middleware: 'trailingSlashRedirect',
+  },
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
@@ -24,11 +36,6 @@ export default {
         name: 'theme-color',
         content: '#242732',
       },
-      {
-        name: 'robots',
-        content: 'noindex,nofollow',
-      },
-
     ],
     link: [
       {

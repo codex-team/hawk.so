@@ -4,7 +4,7 @@
       <div class="block">
         <div class="grid__block">
           <h2 class="title">Open Source</h2>
-          <div class="text">Исходный код открыт<br/>для исследования и обслуживания</div>
+          <div class="text">Исходный код открыт<br/>для исследования и обсуждения</div>
         </div>
         <div class="grid__block">
           <div class="title">100 000 000</div>
