@@ -70,6 +70,7 @@ import UsedByTable, {UsedByItem} from '~/components/used-by-table.vue';
 import UiButton from '~/components/ui-button.vue';
 import Contact from '~/components/contact.vue';
 import gridInfo from '~/components/grid-info.vue';
+import { MetaInfo } from 'vue-meta';
 
 export default Vue.extend({
   components: {
@@ -315,7 +316,7 @@ export default Vue.extend({
       }
     },
   },
-  head() {
+  head(): MetaInfo {
     return {
       title: "Хоук — российский трекер ошибок",
       meta: [
@@ -374,6 +375,76 @@ export default Vue.extend({
           name: 'twitter:url',
           content: 'https://hawk.so/ru'
         },
+      ],
+      script: [
+        {
+          // JSON-LD schema.org markup for WebPage
+          type: 'application/ld+json',
+          json: {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Хоук — российский трекер ошибок",
+            "description": "Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом",
+            "image": "https://hawk.so/hawk-ru-og-image.png",
+            "url": "https://hawk.so/ru",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Хоук",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://hawk.so/hawk-ru-og-image.png"
+              }
+            },
+            "creator": {
+              "@type": "Organization",
+              "name": "CodeX",
+              "description": "Команда open-source разработчиков",
+              "url": "https://codex.so",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://codex.so/public/app/img/codex-logo.svg"
+              },
+              "sameAs": [
+                "http://twitter.com/codex_team"
+              ]
+            }
+          },
+        },
+        {
+          // JSON-LD schema.org markup for Product
+          type: 'application/ld+json',
+          json: {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Хоук — российский трекер ошибок",
+            "description": "Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом",
+            "image": "https://hawk.so/hawk-ru-og-image.png",
+            "brand": {
+              "@type": "Brand",
+              "name": "Хоук"
+            },
+            "offers": {
+              "@type": "Offer",
+              "url": "https://hawk.so/ru",
+              "priceCurrency": "RUB",
+              "price": "0",  // Adjust this value to the actual price
+              "availability": "https://schema.org/InStock"
+            },
+            "creator": {
+              "@type": "Organization",
+              "name": "CodeX",
+              "description": "Команда open-source разработчиков",
+              "url": "https://codex.so",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://codex.so/public/app/img/codex-logo.svg"
+              },
+              "sameAs": [
+                "http://twitter.com/codex_team"
+              ]
+            }
+          }
+        }
       ]
     }
   }
