@@ -36,11 +36,6 @@ export default {
         name: 'theme-color',
         content: '#242732',
       },
-      {
-        name: 'robots',
-        content: 'noindex,nofollow',
-      },
-
     ],
     link: [
       {
