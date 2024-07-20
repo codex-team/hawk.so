@@ -380,6 +380,13 @@ export default Vue.extend({
   head() {
     return {
       title: "Хоук — российский трекер ошибок",
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://hawk.so/ru/',
+          id: 'canonical'
+        },
+      ],
       meta: [
         {
           hid: 'description',
@@ -404,7 +411,7 @@ export default Vue.extend({
         {
           hid: 'og:url',
           name: 'og:url',
-          content: 'https://hawk.so/ru'
+          content: 'https://hawk.so/ru/'
         },
         {
           hid: 'og:type',
@@ -434,7 +441,7 @@ export default Vue.extend({
         {
           hid: 'twitter:url',
           name: 'twitter:url',
-          content: 'https://hawk.so/ru'
+          content: 'https://hawk.so/ru/'
         },
       ],
     }
