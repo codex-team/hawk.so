@@ -1,11 +1,4 @@
 export default {
-  router: {
-    /**
-     * This will not allow to visit route with trailing slash
-     * (else redirect will be treated as navigation to the current page and error will be raised)
-     */
-    trailingSlash: false,
-  },
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 

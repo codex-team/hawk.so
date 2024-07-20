@@ -380,6 +380,13 @@ export default Vue.extend({
   head() {
     return {
       title: "Хоук — российский трекер ошибок",
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://hawk.so/ru/',
+          id: 'canonical'
+        },
+      ],
       meta: [
         {
           hid: 'description',
