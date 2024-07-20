@@ -12,7 +12,7 @@
 
       <a
         class="site-header__logo"
-        href="/ru"
+        href="/ru/"
       >
         <img
           src="~/assets/images/hawk-logo.png"
