@@ -64,6 +64,7 @@ import IconSignIn from '~/assets/svg/sign-in.svg?inline';
 import IconDownload from '~/assets/svg/download.svg?inline';
 import Contact from '~/components/contact.vue';
 import gridInfo from '~/components/grid-info.vue';
+import Features, { Feature } from '~/components/features.vue';
 
 export default Vue.extend({
   components: {
