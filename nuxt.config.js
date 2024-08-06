@@ -2,44 +2,6 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
-  // Global page headers (https://go.nuxtjs.dev/config-head)
-  head: {
-    title: 'Hawk. Errors catcher. Reimagined.',
-    meta: [
-      { charset: 'utf-8' },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Hawk.so - errors tracking system.',
-      },
-      {
-        name: 'msapplication-TileColor',
-        content: '#242732',
-      },
-      {
-        name: 'theme-color',
-        content: '#242732',
-      },
-    ],
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon-32.png',
-        sizes: '32x32',
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: 'https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap',
-      },
-    ],
-  },
-
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     '@/assets/styles/variables',
