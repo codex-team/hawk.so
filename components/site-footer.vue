@@ -1,273 +1,51 @@
 <template>
-  <div class="yard-footer">
-    <div class="yard-footer__inner">
-      <div class="yard-footer__left">
-        <a
-          href="/"
-          class="yard-footer__title"
-        >
-          Hawk
-        </a>
-        <div class="yard-footer__desc">
-          Errors catcher. Reimagined.
-        </div>
-        <div class="yard-footer__made-by">
-          Made by <a href="https://codex.so">CodeX</a>
-
-          <a
-            class="yard-footer__made-by-icon"
-            href="https://github.com/codex-team"
-            target="_target"
-          >
-            <img src="~/assets/svg/github.svg" alt="CodeX GitHub">
-          </a>
-
-          <a
-            class="yard-footer__made-by-icon"
-            href="https://twitter.com/codex_team"
-            target="_target"
-          >
-            <img src="~/assets/svg/twitter.svg" alt="CodeX Twitter">
-          </a>
-
-          <a
-            class="yard-footer__made-by-icon"
-            href="https://instagram.com/codex_team"
-            target="_target"
-          >
-            <img src="~/assets/svg/instagram.svg" alt="CodeX Instagram">
-          </a>
-        </div>
-      </div>
-      <div class="yard-footer__right">
-        <div class="menu">
-          <section
-            v-for="(item, index) in menu"
-            :key="'section:' + index"
-            class="menu__section"
-          >
-            <div class="menu__title">
-              {{ item.section }}
-            </div>
-            <div
-              class="menu__section-links"
-              :class="{
-                'menu__section-links--multicolumn': item.items.length > 3
-              }"
-            >
-              <a
-                v-for="(link, i) in item.items"
-                :key="'link:' + i"
-                class="menu__item"
-                :href="link.url"
-              >
-                {{ link.label }}
-              </a>
-            </div>
-          </section>
-        </div>
-      </div>
+  <div class="footer">
+    <div class="footer__inner">
+      <div class="footer__inner-text-1">Hawk</div>
+      <div class="footer__inner-text-2">© 2018—2024</div>
+      <a href="https://docs.hawk.so/hawk">О проекте</a>
+      <a href="https://docs.hawk.so/hawk">Документация</a>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-export default Vue.extend({
-  data() {
-    return {
-      menu: [
-        {
-          section: 'About Hawk',
-          items: [
-            {
-              label: 'Documentation',
-              url: 'https://docs.hawk.so/',
-            },
-            // {
-            //   label: 'Pricing',
-            //   url: '/pricing',
-            // },
-          ],
-        },
-        {
-          section: 'Product',
-          items: [
-            {
-              label: 'Hawk web',
-              url: '//garage.hawk.so',
-            },
-            {
-              label: 'PC/Mac/Linux',
-              url: '/download',
-            },
-            {
-              label: 'Hawk Android (WIP)',
-              url: 'https://github.com/codex-team/hawk.android',
-            },
-          ],
-        },
-        {
-          section: 'Integrations',
-          items: [
-            {
-              label: 'JavaScript',
-              url: 'https://github.com/codex-team/hawk.javascript',
-            },
-            {
-              label: 'PHP',
-              url: 'https://github.com/codex-team/hawk.php',
-            },
-            {
-              label: 'Python',
-              url: 'https://github.com/codex-team/hawk.python',
-            },
-            {
-              label: 'Node.js',
-              url: 'https://github.com/codex-team/hawk.nodejs',
-            },
-            {
-              label: 'Go',
-              url: 'https://github.com/codex-team/hawk.go',
-            },
-            {
-              label: 'Kotlin',
-              url: 'https://github.com/codex-team/hawk.kotlin',
-            },
-            {
-              label: 'View all »',
-              url: 'https://docs.hawk.so/integrations',
-            },
-          ],
-        },
-      ],
-    };
-  },
-});
+<script setup lang="ts">
 </script>
 
-<style lang="postcss" scoped>
-
-.yard-footer {
+<style lang="postcss">
+@import url('@/assets/styles/variables.pcss');
+.footer {
   display: flex;
-  font-size: 15px;
-  line-height: 26px;
-  color: var(--color-text-second);
-  padding: 150px 0 100px;
-
-  @media (--screen-medium){
-    padding-bottom: 30px;
-  }
-
-  @media (--screen-mobile){
-    padding-top: 60px;
-  }
-
-  a:hover {
-    color: var(--color-text-main)
-  }
+  align-items: center;
+  justify-content: center;
 
   &__inner {
     display: flex;
-    max-width: var(--layout-main-col-width);
-    margin: 0 auto;
-    padding: 0 var(--layout-paddings-horisontal);
-    flex-basis: 100%;
+    margin: 120px 0;
+    border-radius: 14px;
+    padding: 10px 20px;
+    gap: 20px;
+    background: #242936;
 
-    @media (--screen-mobile) {
-      flex-direction: column;
-    }
-  }
-
-  &__left {
-    margin-right: auto;
-
-    @media (--screen-mobile) {
-      margin-right: 0;
-      margin-top: 30px;
-      order: 2;
-    }
-  }
-
-  &__right {
-    flex-grow: 2;
-    margin-left: 120px;
-
-    @media (--screen-mobile) {
-      margin-left: 0;
-    }
-  }
-
-  &__title {
-    display: block;
-    font-size: 27px;
-    font-weight: 800;
-    color: var(--color-text-main);
-    margin-bottom: 5px;
-  }
-
-  &__made-by {
-    border-top: 1px solid var(--color-border-light);
-    padding-top: 10px;
-    margin-top: 10px;
-    font-size: 14px;
-
-    &-icon {
-      display: inline-block;
-      margin-left: 8px;
-      vertical-align: middle;
-      transition: transform 150ms ease-in;
-      will-change: transform;
-
-      &:hover {
-        transform: scale(1.35) rotate(-10deg)
-      }
-
-      &:nth-of-type(2n+1):hover {
-        transform: scale(1.35) rotate(10deg)
-      }
-    }
-  }
-}
-
-.menu {
-  display: flex;
-  flex-grow: 2;
-  justify-content: space-between;
-
-  @media (--screen-mobile) {
-    flex-direction: column;
-  }
-
-  &__section {
-    flex-grow: 1;
-
-    &:not(:last-of-type){
-      @media (--screen-mobile) {
-        margin-bottom: 30px;
-      }
-    }
-
-    &-links {
-      display: grid;
-      grid-template-columns: 1fr;
-
-      &--multicolumn {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-    }
-
-  }
-
-  &__title {
+    color: #DBE6FF;
+    font-family: Roboto;
     font-size: 16px;
-    margin-bottom: 13px;
-    font-weight: 800;
-    color: var(--color-text-main);
-  }
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
 
-  &__item {
-    padding: 2px 0;
+    @media (--screen-mobile) {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+    }
+
+    &-text-1 {
+      font-weight: 700;
+    }
+
+    &-text-2 {
+      color: rgba(219, 230, 255, 0.60);
+    }
   }
 }
 </style>

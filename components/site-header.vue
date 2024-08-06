@@ -12,7 +12,7 @@
 
       <a
         class="site-header__logo"
-        href="/"
+        href="/ru/"
       >
         <img
           src="~/assets/images/hawk-logo.png"
@@ -21,14 +21,21 @@
         Hawk
       </a>
       <div class="site-header__menu">
-        <a href="https://docs.hawk.so/">Docs</a>
-        <a href="/download">Download</a>
-<!--        <a href="/pricing">Pricing</a>-->
+        <a href="https://docs.hawk.so/">Документация</a>
+        <div
+          class="site-header__menu__local-version"
+          href="/download">
+            <img src="~/assets/svg/locale-version.svg" class="site-header__menu__local-version-svg"/>
+            <div class="text-container">Локализованная версия</div>
+        </div>
       </div>
-
-      <a class="site-header__signin" href="//garage.hawk.so">
-        <icon-sign-in />
-        To Garage
+      <a
+        href="https://github.com/codex-team/hawk.mono"
+        class="site-header__menu-logo"
+      >
+        <img
+          src="~/assets/svg/ru/github.svg"
+        />
       </a>
     </div>
   </div>
@@ -81,6 +88,7 @@ export default Vue.extend({
     &__inner {
       display: flex;
       align-items: center;
+      flex-shrink: 0;
       height: 100%;
       max-width: var(--layout-main-col-width);
       margin: 0 auto;
@@ -114,6 +122,11 @@ export default Vue.extend({
     }
 
     &__menu {
+      display: flex;
+      flex-direction: row;
+      flex-shrink: 0;
+      align-items: center;
+
       @media (--screen-mobile) {
         display: none;
       }
@@ -121,11 +134,12 @@ export default Vue.extend({
       ^&--menu-showed & {
         @media (--screen-mobile) {
           display: block;
+          padding-bottom: 12px;
         }
       }
 
       a {
-        display: inline-block;
+        display: flex;
         margin-right: 30px;
 
         @media (--screen-mobile) {
@@ -147,6 +161,36 @@ export default Vue.extend({
         @media (--screen-mobile) {
           display: flex;
         }
+      }
+
+      &__local-version {
+        width: auto;
+        height: 32px;
+        display: flex;
+        place-items: center;
+        border-radius: 35px;
+        padding: 1px 13px;
+        gap: 10px;
+        background: linear-gradient(248.21deg, #0075FF 25.68%, #B56BFF 107.97%);
+
+        @media (--screen-mobile) {
+          display: none;
+        }
+
+        .text-container {
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 30px;
+          color: white;
+        }
+      }
+    }
+
+    &__menu-logo {
+      margin-left: auto;
+
+      @media (--screen-mobile) {
+        display: none;
       }
     }
 
