@@ -12,7 +12,7 @@
 
       <a
         class="site-header__logo"
-        href="/ru/"
+        href="/"
       >
         <img
           src="~/assets/images/hawk-logo.png"
@@ -24,9 +24,9 @@
         <a href="https://docs.hawk.so/">Документация</a>
         <div
           class="site-header__menu__local-version"
-          href="/download">
-            <img src="~/assets/svg/locale-version.svg" class="site-header__menu__local-version-svg"/>
-            <div class="text-container">Локализованная версия</div>
+        >
+          <img src="~/assets/svg/locale-version.svg" class="site-header__menu__local-version-svg"/>
+          <div class="text-container">Локализованная версия</div>
         </div>
       </div>
       <a
