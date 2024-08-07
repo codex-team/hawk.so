@@ -28,7 +28,6 @@
     background: #242936;
 
     color: #DBE6FF;
-    font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
