@@ -4,7 +4,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Hawk. Errors catcher. Reimagined.',
+    title: 'Хоук — российский трекер ошибок',
     meta: [
       { charset: 'utf-8' },
       {
@@ -14,7 +14,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Hawk.so - errors tracking system.',
+        content: 'Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом',
       },
       {
         name: 'msapplication-TileColor',

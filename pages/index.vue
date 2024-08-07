@@ -1,106 +1,60 @@
 <template>
   <div class="yard">
-    <div class="landing">
+   <div class="landing">
       <illustration class="landing__illustration" />
-
       <div class="landing__content">
         <div class="landing__content-head">
           <div class="landing__content-head-left">
             <h1>
-              Errors catcher. Reimagined.
+              Трекер ошибок
             </h1>
 
             <div class="description">
-              We'll help to improve your product's quality. You’ll see all the errors and problems in your code and we'll help to resolve them.
-              <br><span class="extra-indent_15px">Hawk is free and open-source.</span>
+              Хоук улучшает качество продукта.<br/>
+              Он отлавливает ошибки в ПО и помогает их устранить.<br/>
+              Локализованная версия позволяет не зависеть от зарубежных сервисов.<br/>
             </div>
-          </div>
-          <div class="landing__content-head-right">
-            <ui-button
-              label="Open in browser"
-              link="//garage.hawk.so"
-              primary
-            >
-              <template v-slot:icon>
-                <icon-sign-in />
-              </template>
-            </ui-button>
-             <ui-button
-              :label="downloadButtonLabel"
-              :link="downloadButtonHref"
-            >
-              <template v-slot:icon>
-                <icon-download />
-              </template>
-            </ui-button>
-            <ui-button
-              label="Join Demo Workspace"
-              link="https://garage.hawk.so/join/6e9fe41c8d6d59b272fda8c43c076ddcb571d3b5b09ad1e95e3a770b6358289c"
-              demo
-            >
-              <template v-slot:icon>
-                <icon-sign-in />
-              </template>
-            </ui-button>
+            <div class="landing__content-head-left-advantages">
+              <h2 class="landing__content-head-left-advantages-text">Сервера в России</h2>
+              <h2 class="landing__content-head-left-advantages-text">Оплата по счету юр. лица</h2>
+              <h2 class="landing__content-head-left-advantages-text">Помощь с интеграцией</h2>
+            </div>
           </div>
         </div>
         <div class="landing__content-preview" :style="`transform: translateY(${Math.max(0, 150 - scroll * 0.35)}px)`">
-          <img src="~/assets/images/hawk-desktop.png" alt="Hawk desktop preview">
+          <img src="~/assets/images/hawk-desktop.png" title="Hawk — российский трекер ошибок" alt="Изображение супер-современного интерфейса Hawk'a">
         </div>
+      </div>
+      <div class="contact-container">
+        <Contact
+          :mail="mail"
+          @update:mail="updateMail"
+          title="Свяжитесь с нами"
+          titleSize="small"
+          style="margin-top: 115px;
+                padding: 0 30px;"/>
       </div>
     </div>
     <div class="section section--with-gradient">
       <div class="section__content">
         <h2 class="section__title">
-          Features
+          Возможности
         </h2>
         <features :features="features" />
       </div>
     </div>
-
-    <div class="section">
-      <open-source />
-    </div>
-
-    <div class="section">
-      <div class="section__content">
-        <number
-          :value="'100 000 000'"
-          caption="events processed every day"
-        />
-      </div>
-    </div>
-
-    <div class="section section--small">
-      <div class="section__content">
-        <h2 class="section__title">
-          Tested by products
-        </h2>
-        <div class="section__description">
-          Hawk is used by several big well-known products. And by some small and unkown ones.
+    <div class="content-blocks">
+      <gridInfo/>
+        <div class="contact-container, contact-container__backgrounded">
+          <Contact
+            inputActive
+            title="Подключайтесь"
+            titleSize="medium"
+            :mail="mail"
+            @update:mail="updateMail"/>
         </div>
-        <used-by-table
-          :items="usedBy"
-        />
       </div>
     </div>
-
-    <div class="section section--small">
-      <div class="section__content">
-        <h2 class="section__title">
-          Supports your stack
-        </h2>
-        <div class="section__description">
-          Hawk has integrations for most of languages. And their count continuously increases.
-        </div>
-        <stack :items="stack" />
-      </div>
-    </div>
-
-<!--  <div class="section section&#45;&#45;small">-->
-<!--    <a href="https://www.producthunt.com/posts/hawk-2?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-hawk-2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=333015&theme=light" alt="Hawk - Open-source errors tracker | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>-->
-<!--  </div>-->
-  </div>
 </template>
 
 <script lang="ts">
@@ -108,35 +62,85 @@ import Vue from 'vue';
 import Illustration from '~/assets/svg/flying-hawk.svg?inline';
 import IconSignIn from '~/assets/svg/sign-in.svg?inline';
 import IconDownload from '~/assets/svg/download.svg?inline';
+import Contact from '~/components/contact.vue';
+import gridInfo from '~/components/grid-info.vue';
 import Features, { Feature } from '~/components/features.vue';
-import Stack, { StackItem } from '~/components/stack.vue';
-import OpenSource from '~/components/open-source.vue';
-import Number from '~/components/number.vue';
-import UsedByTable, {UsedByItem} from '~/components/used-by-table.vue';
-import UiButton from '~/components/ui-button.vue';
 
 export default Vue.extend({
   components: {
     Illustration,
     IconSignIn,
     IconDownload,
-    Features,
-    Stack,
-    UiButton,
-    OpenSource,
-    Number,
-    UsedByTable,
+    Contact,
+    gridInfo,
+  },
+  jsonld() {
+    return [{
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Хоук — российский трекер ошибок",
+      "description": "Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом",
+      "image": "https://hawk-tracker.ru/hawk-ru-og-image.png",
+      "url": "https://hawk-tracker.ru",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Хоук",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hawk-tracker.ru/hawk-ru-og-image.png"
+        }
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "CodeX",
+        "description": "Команда open-source разработчиков",
+        "url": "https://codex.so",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://codex.so/public/app/img/codex-logo.svg"
+        },
+        "sameAs": [
+          "http://twitter.com/codex_team"
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Хоук — российский трекер ошибок",
+      "description": "Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом",
+      "image": "https://hawk-tracker.ru/hawk-ru-og-image.png",
+      "brand": {
+        "@type": "Brand",
+        "name": "Хоук"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://hawk-tracker.ru",
+        "priceCurrency": "RUB",
+        "price": "0",  // Adjust this value to the actual price
+        "availability": "https://schema.org/InStock"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "CodeX",
+        "description": "Команда open-source разработчиков",
+        "url": "https://codex.so",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://codex.so/public/app/img/codex-logo.svg"
+        },
+        "sameAs": [
+          "http://twitter.com/codex_team"
+        ]
+      }
+    }]
   },
   data(): {
     /**
      * Features list description
      */
     features: Feature[],
-
-    /**
-     * Stack technologies
-     */
-    stack: StackItem[],
 
     /**
      * Scroll Y position
@@ -156,9 +160,9 @@ export default Vue.extend({
     downloadButtonHref: string,
 
     /**
-     * List of products to be displayed in 'Used by' section
+     * Mail that was left by user
      */
-    usedBy: UsedByItem[];
+    mail: string;
     } {
     return {
       /**
@@ -166,78 +170,25 @@ export default Vue.extend({
        */
       features: [
         {
-          title: 'Track errors',
-          description: 'Hawk will show you what’s going wrong in your application',
+          title: 'Отслеживайте ошибки',
+          description: 'Хоук покажет, что пошло не по плану в вашей программе',
           picture: 'feature-list',
         },
         {
-          title: 'Discover details',
-          description: 'Hawk will help to understand and resolve the problem',
+          title: 'Исследуйте детали',
+          description: 'Хоук поможет понять и исправить причину проблемы',
           picture: 'feature-event',
         },
         {
-          title: 'Watch app health',
-          description: 'You can monitor and rate the quality of your product',
+          title: 'Следите за здоровьем ПО',
+          description: 'Оценивайте и улучшайте качество вашего продукта',
           picture: 'feature-graph',
           style: 'margin-bottom: -21px',
         },
         {
-          title: 'Be notified',
-          description: 'Do not miss important events staying alerted via Slack, Telegram or Email',
+          title: 'Оперативные уведомления',
+          description: 'Не пропустите важные события, оставаясь на связи в Slack, Telegram или на почте',
           pictureComponent: 'features-be-notified',
-        },
-      ],
-
-      /**
-       * Stack technologies
-       */
-      stack: [
-        {
-          title: 'JavaScript',
-          icon: 'svg/javascript.svg',
-          url: 'https://github.com/codex-team/hawk.javascript',
-        },
-        {
-          title: 'Ruby',
-          icon: 'svg/ruby.svg',
-        },
-        {
-          title: 'PHP',
-          icon: 'svg/php.svg',
-          url: 'https://github.com/codex-team/hawk.php',
-        },
-        {
-          title: 'Go',
-          icon: 'svg/go.svg',
-          url: 'https://github.com/codex-team/hawk.go',
-        },
-        {
-          title: 'Node.js',
-          icon: 'svg/nodejs.svg',
-          url: 'https://github.com/codex-team/hawk.nodejs',
-        },
-        {
-          title: 'Scala',
-          icon: 'svg/scala.svg',
-          url: 'https://github.com/codex-team/hawk.scala',
-        },
-        {
-          title: 'Python',
-          icon: 'svg/python.svg',
-          url: 'https://github.com/codex-team/hawk.python',
-        },
-        {
-          title: 'Kotlin',
-          icon: 'svg/kotlin.svg',
-          url: 'https://github.com/codex-team/hawk.kotlin',
-        },
-        {
-          title: 'Java',
-          icon: 'svg/java.svg',
-        },
-        {
-          title: 'Swift',
-          icon: 'svg/swift.svg',
         },
       ],
 
@@ -258,41 +209,7 @@ export default Vue.extend({
        */
       downloadButtonHref: 'https://github.com/codex-team/hawk.desktop',
 
-      /**
-       * List of products to be displayed in 'Used by' section
-       */
-      usedBy: [
-        {
-          title: 'TJ',
-          logo: 'svg/used-by/tj.svg',
-          url: 'https://tjournal.ru',
-        },
-        {
-          title: 'Coub',
-          logo: 'svg/used-by/coub.png',
-          url: 'https://coub.com',
-        },
-        {
-          title: 'DTF',
-          logo: 'svg/used-by/dtf.svg',
-          url: 'https://dtf.ru',
-        },
-        {
-          title: 'Heyka',
-          logo: 'svg/used-by/heyka.svg',
-          url: 'https://heyka.app',
-        },
-        {
-          title: 'vc.ru',
-          logo: 'svg/used-by/vc.svg',
-          url: 'https://vc.ru',
-        },
-        {
-          title: 'Editor.js',
-          logo: 'svg/used-by/editorjs.svg',
-          url: 'https://editorjs.io',
-        },
-      ],
+      mail: '',
     };
   },
   mounted() {
@@ -322,6 +239,10 @@ export default Vue.extend({
       return 'Unknown';
     },
 
+    updateMail(newMail: string) {
+      this.mail = newMail;
+    },
+
     /**
      * Update label and href of the Download button
      * corresponding by user platform
@@ -345,6 +266,75 @@ export default Vue.extend({
       }
     },
   },
+  head() {
+    return {
+      title: "Хоук — российский трекер ошибок",
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://hawk-tracker.ru',
+          id: 'canonical'
+        },
+      ],
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: 'Хоук — российский трекер ошибок'
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: 'Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом'
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: 'https://hawk-tracker.ru/hawk-ru-og-image.png'
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://hawk-tracker.ru'
+        },
+        {
+          hid: 'og:type',
+          name: 'og:type',
+          content: 'website'
+        },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'Хоук — российский трекер ошибок'
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: 'Мониторинг ошибок в ПО с серверами в России и открытым исходным кодом'
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://hawk-tracker.ru/hawk-ru-og-image.png'
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: 'https://hawk-tracker.ru'
+        },
+      ],
+    }
+  }
 });
 </script>
 
@@ -366,8 +356,10 @@ export default Vue.extend({
 }
 
 .landing {
+  font-family: "Roboto-Regular", Helvetica;
   position: relative;
   background: #080E20;
+  align-items: center;
 
   &__illustration {
     width: 100%;
@@ -376,11 +368,12 @@ export default Vue.extend({
 
   &__content {
     position: relative;
+    flex-shrink: 0;
 
     &-head {
-      max-width: var(--layout-main-col-width);
-      margin: 170px auto 50px;
+      margin: 120px auto 50px;
       padding: 0 var(--layout-paddings-horisontal);
+      justify-content: center;
       display: flex;
 
       @media (--screen-tall) {
@@ -402,35 +395,71 @@ export default Vue.extend({
 
       &-left {
         padding-right: 50px;
+        gap: 18px;
+        padding-bottom: 13px;
+        position: relative;
+        align-items: center;
 
         @media (--screen-mobile) {
           padding-right: 0;
         }
 
         h1 {
-          color: #FFFFFF;
-          font-size: 49px;
+          color: #F2F6FF;
+          font-size: 89px;
           font-weight: 700;
           margin: 0 0 22px 0;
 
           @media (--screen-small) {
-            font-size: 34px;
+            font-size: 60px;
             margin-bottom: 16px;
           }
 
           @media (--screen-mobile) {
-            font-size: 26px;
+            font-size: 30px;
+          }
+        }
+
+        &-advantages {
+          display: flex;
+          justify-content: space-between;
+          color: #F2F6FF;
+          font-weight: 700;
+          width: 100%;
+          line-height: 30px;
+          gap: 40px;
+          font-size: 22px;
+          margin-top: 13px;
+
+          @media (--screen-middle) {
+            gap: 20px;
+          }
+
+          @media (--screen-mobile) {
+            display: grid;
+            font-weight: 600;
+            font-size: 16px;
+            gap: 0px;
+          }
+
+          &-text {
+            flex: 1 0 auto;
+            letter-spacing: 0;
+            white-space: nowrap;
+            margin: 0;
+            font-size: inherit;
           }
         }
 
         .description {
-          display: grid;
           font-weight: 500;
-          color: var(--color-text-main);
+          color: #dbe6ffce;
           letter-spacing: 0.33px;
           font-size: 20px;
           line-height: 30px;
-          max-width: 638px;
+          overflow-wrap: normal;
+          width: 100%;
+          padding-bottom: 13px;
 
           @media (--screen-small) {
             font-size: 18px;
@@ -438,7 +467,7 @@ export default Vue.extend({
           }
 
           @media (--screen-mobile) {
-            font-size: 16px;
+            font-size: 14px;
             line-height: 22px;
           }
         }
@@ -503,6 +532,13 @@ export default Vue.extend({
         transform: none !important;
       }
 
+      @media (--screen-mobile) {
+        padding-top: 60px;
+        transform: none !important;
+        border-radius: 7px;
+        box-shadow: none;
+      }
+
       @media (--screen-small) {
         width: 90%;
       }
@@ -510,9 +546,40 @@ export default Vue.extend({
   }
 }
 
+.contact-container {
+  width: 100%;
+  height: fit-content;
+
+  &__backgrounded {
+    border-radius: 8px;
+    margin-top: 16px;
+    padding: 40px 30px;
+    background-color: #242936;
+  }
+}
+
+.content-blocks {
+  padding: 30px 40px;
+  display: inline-grid;
+  justify-content: center;
+
+  @media (--screen-mobile) {
+    padding: 20px 20px;
+  }
+}
+
 .section {
   position: relative;
   padding-top: 100px;
+
+  @media (--screen-middle) {
+    padding-top: 70px;
+  }
+
+  @media (--screen-mobile) {
+    padding-top: 40px;
+  }
+
   padding-bottom: 80px;
 
   &--with-gradient::before {
@@ -541,32 +608,13 @@ export default Vue.extend({
     margin-bottom: 50px;
 
     @media (--screen-small) {
-      font-size: 40px;
+      font-size: 50px;
       margin-bottom: 30px;
     }
 
     @media (--screen-mobile) {
+      font-size: 30px;
       text-align: center;
-    }
-  }
-
-  &__description {
-    display: inline-block;
-    color: var(--color-text-main);
-    font-size: 18px;
-    line-height: 28px;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    max-width: 400px;
-    background-clip: text;
-    background-image: linear-gradient(270deg, #6781B4 1%, #BAD6FE 99%);
-    color: transparent;
-    font-weight: 500;
-
-     @media (--screen-mobile) {
-       font-size: 15px;
-       line-height: 1.5em;
-       margin-bottom: 30px;
     }
   }
 
