@@ -12,8 +12,7 @@
   },
   "dependencies": {
     "core-js": "^3.16.1",
-    "nuxt": "^2.15.8",
-    "nuxt-jsonld": "v1"
+    "nuxt": "^2.15.8"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.8",
