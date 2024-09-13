@@ -12,7 +12,6 @@
 
             <div class="description">
               We'll help to improve your product's quality. You’ll see all the errors and problems in your code and we'll help to resolve them.
-              <br><span class="extra-indent_15px">Hawk is free and open-source.</span>
             </div>
           </div>
           <div class="landing__content-head-right">
