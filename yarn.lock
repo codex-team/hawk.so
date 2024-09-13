@@ -5457,13 +5457,6 @@ num2fraction@^1.2.2:
   version "1.2.2"
   resolved "https://registry.npmjs.org/num2fraction/-/num2fraction-1.2.2.tgz"
 
-nuxt-jsonld@v1:
-  version "1.5.8"
-  resolved "https://registry.yarnpkg.com/nuxt-jsonld/-/nuxt-jsonld-1.5.8.tgz#bc14a9261d7fba4df779f7f29f80214c43ebfb23"
-  integrity sha512-D+xYmegfxNtDH39W6Aa8B7swAfYvIF807BsDe5KtQNLk83YpYm+dqASSDVeVN6sZsrBNy5Qr/VqzB+z0M2InYQ==
-  dependencies:
-    schema-dts "^1.0.0"
-
 nuxt@^2.15.8:
   version "2.15.8"
   resolved "https://registry.npmjs.org/nuxt/-/nuxt-2.15.8.tgz"
@@ -6929,11 +6922,6 @@ sass-loader@10.1.1:
 sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz"
-
-schema-dts@^1.0.0:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-1.1.2.tgz#82ccf71b5dcb80065a1cc5941888507a4ce1e44b"
-  integrity sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==
 
 schema-utils@2.7.0:
   version "2.7.0"
