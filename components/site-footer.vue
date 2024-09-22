@@ -3,7 +3,7 @@
     <div class="footer__inner">
       <div class="footer__inner-text-1">Hawk</div>
       <div class="footer__inner-text-2">© 2018—2024</div>
-      <a href="https://docs.hawk.so/hawk">О проекте</a>
+      <a href="https://codex.so/hawk-overview">О проекте</a>
       <a href="https://docs.hawk.so/hawk">Документация</a>
     </div>
   </div>

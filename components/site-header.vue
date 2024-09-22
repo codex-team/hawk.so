@@ -22,6 +22,7 @@
       </a>
       <div class="site-header__menu">
         <a href="https://docs.hawk.so/">Документация</a>
+        <a href="https://codex.so/hawk-overview">О проекте</a>
         <div
           class="site-header__menu__local-version"
         >
